@@ -4,6 +4,12 @@
 > **Data:** 27/03/2026
 > **Status:** Aprovado para desenvolvimento
 
+### O que e um PRD?
+
+**PRD (Product Requirements Document)** e o documento de requisitos do produto. Ele serve como a "planta" do sistema — define **o que** sera construido, **para quem**, **por que** e **em que ordem**. E a referencia central que guia toda a equipe de desenvolvimento, garantindo que todos tenham a mesma visao do produto antes de comecar a escrever codigo.
+
+Este PRD contem: a visao do produto, os perfis de usuario, as funcionalidades priorizadas, o modelo de dados, a API, as telas e o plano de implementacao por fases.
+
 ---
 
 ## 1. Visao Geral
@@ -59,6 +65,21 @@ Sistema web completo de gestao e venda de joias que integra: catalogo com atribu
 ---
 
 ## 3. User Stories (Priorizadas por MoSCoW)
+
+### O que e MoSCoW?
+
+**MoSCoW** e um metodo de priorizacao que classifica cada funcionalidade em 4 niveis:
+
+| Nivel | Significado | Na pratica |
+|---|---|---|
+| **MUST HAVE** | **Tem que ter** — o sistema nao funciona sem isso | Entra no MVP. Se nao entregar, o produto nao tem valor |
+| **SHOULD HAVE** | **Deveria ter** — muito importante, mas da pra lancar sem | Entra logo apos o MVP. Agrega valor significativo |
+| **COULD HAVE** | **Poderia ter** — seria bom, mas e opcional | Implementar se sobrar tempo ou em versoes futuras |
+| **WON'T HAVE** | **Nao tera agora** — descartado para este momento | Backlog futuro. Documentado para nao se perder |
+
+> As letras **M-o-S-C-o-W** formam o acronimo (o "o" minusculo e so para facilitar a leitura).
+
+---
 
 ### MUST HAVE (MVP)
 
@@ -389,9 +410,32 @@ Empresa (registro unico)
 
 ---
 
-## 9. Plano de Fases de Implementacao
+## 9. Escopo do MVP
 
-### Fase 1 — Fundacao (Semanas 1-2)
+O MVP contempla as **Fases 1 a 4** e entrega um sistema funcional com os fluxos essenciais do negocio:
+
+| O que ENTRA no MVP | O que fica para POS-MVP |
+|---|---|
+| Autenticacao com roles (JWT) | Dashboard com graficos e KPIs |
+| Catalogo completo com atributos de joias | Relatorios com exportacao PDF/CSV |
+| Controle de estoque com rastreamento | Comissionamento automatizado |
+| PDV (vendas com pagamento) | Metas de venda |
+| Gestao de clientes | Importacao em lote (CSV/Excel) |
+| Consignacao (criar kit → enviar → acertar) | Alertas de estoque/vencimento |
+| Painel do representante (self-service) | Ranking de produtos/vendedores |
+| Cotacao de metais e precificacao | Configuracoes da empresa |
+
+**User Stories do MVP:** US-01 a US-12 (todas as MUST HAVE)
+**Fases do MVP:** 1, 2, 3 e 4 (semanas 1-10)
+**Fases Pos-MVP:** 5, 6 e 7 (semanas 11-16)
+
+> **Criterio de "pronto" do MVP:** Um admin consegue cadastrar joias com todos os atributos, controlar estoque, realizar vendas pelo PDV, gerenciar consignacoes com representantes, e cada perfil acessa apenas suas funcionalidades.
+
+---
+
+## 10. Plano de Fases de Implementacao
+
+### Fase 1 — Fundacao (Semanas 1-2) `[MVP]`
 **Objetivo:** Estrutura base dos dois projetos
 
 **Backend:**
@@ -410,7 +454,7 @@ Empresa (registro unico)
 
 **Entregavel:** Login funcional, layout base navegavel, deploy de dev
 
-### Fase 2 — Catalogo e Estoque (Semanas 3-5)
+### Fase 2 — Catalogo e Estoque (Semanas 3-5) `[MVP]`
 **Objetivo:** CRUD de produtos com atributos de joias e controle de estoque
 
 **Backend:**
@@ -429,7 +473,7 @@ Empresa (registro unico)
 
 **Entregavel:** Catalogo completo com busca, filtros e estoque funcional
 
-### Fase 3 — Vendas e PDV (Semanas 6-7)
+### Fase 3 — Vendas e PDV (Semanas 6-7) `[MVP]`
 **Objetivo:** Fluxo completo de vendas
 
 **Backend:**
@@ -447,7 +491,7 @@ Empresa (registro unico)
 
 **Entregavel:** PDV funcional, gestao de clientes
 
-### Fase 4 — Consignacao e Representantes (Semanas 8-10)
+### Fase 4 — Consignacao e Representantes (Semanas 8-10) `[MVP]`
 **Objetivo:** Fluxo completo de consignacao e gestao de representantes
 
 **Backend:**
@@ -466,7 +510,7 @@ Empresa (registro unico)
 
 **Entregavel:** Fluxo completo de consignacao, painel do representante
 
-### Fase 5 — Comissionamento e Metas (Semanas 11-12)
+### Fase 5 — Comissionamento e Metas (Semanas 11-12) `[POS-MVP]`
 **Objetivo:** Calculo automatico de comissoes e metas
 
 **Backend:**
@@ -484,7 +528,7 @@ Empresa (registro unico)
 
 **Entregavel:** Comissionamento automatizado, gestao de metas
 
-### Fase 6 — Dashboard e Relatorios (Semanas 13-14)
+### Fase 6 — Dashboard e Relatorios (Semanas 13-14) `[POS-MVP]`
 **Objetivo:** Visao gerencial e relatorios
 
 **Backend:**
@@ -502,7 +546,7 @@ Empresa (registro unico)
 
 **Entregavel:** Sistema completo com dashboards e relatorios
 
-### Fase 7 — Polish e QA (Semanas 15-16)
+### Fase 7 — Polish e QA (Semanas 15-16) `[POS-MVP]`
 **Objetivo:** Refinamento, testes e preparacao para producao
 
 - Testes unitarios e de integracao (JUnit 5, Testcontainers)
@@ -517,7 +561,7 @@ Empresa (registro unico)
 
 ---
 
-## 10. Arquivos de Referencia
+## 11. Arquivos de Referencia
 
 | Arquivo | Conteudo |
 |---|---|

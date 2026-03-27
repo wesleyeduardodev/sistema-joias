@@ -6,7 +6,8 @@
       "WebFetch(domain:cdssistemas.com)",
       "WebFetch(domain:www.bautz.com.br)",
       "WebFetch(domain:cds.com.br)",
-      "WebFetch(domain:aureatelabs.com)"
+      "WebFetch(domain:aureatelabs.com)",
+      "WebFetch(domain:developers.googleblog.com)"
     ]
   }
 }

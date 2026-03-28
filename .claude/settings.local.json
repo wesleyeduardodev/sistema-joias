@@ -37,7 +37,11 @@
       "Bash(python3 -c \":*)",
       "Bash(java -cp \"target/classes;target/dependency/*\" -e \"System.out.println\\(new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder\\(\\).encode\\(Admin@123\\)\\);\")",
       "Bash(python3 -c \"import bcrypt; print\\(bcrypt.hashpw\\(b''''Admin@123'''', bcrypt.gensalt\\(\\)\\).decode\\(\\)\\)\")",
-      "Bash(htpasswd -nbBC 10 Admin@123)"
+      "Bash(htpasswd -nbBC 10 Admin@123)",
+      "Bash(node -e \"const z = require\\(''zod''\\); console.log\\(typeof z.coerce\\); console.log\\(Object.keys\\(z.coerce\\).join\\('', ''\\)\\); const n = z.coerce.number\\(\\).min\\(1\\); console.log\\(n.parse\\(''5''\\)\\);\")",
+      "Bash(mvn spring-boot:run)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJub21lIjoiQWRtaW5pc3RyYWRvciIsInN1YiI6ImFkbWluQGpvaWFzLmNvbSIsImlhdCI6MTc3NDcwOTMxOCwiZXhwIjoxNzc0NzEwMjE4fQ.w4fv76FGQuXpltVw8cYCZrLH64RCIfBozgbZV_WPyxE\")",
+      "Bash(__NEW_LINE_a58e63379294c7a7__ curl -s -X POST http://localhost:8080/api/v1/produtos -H \"Content-Type: application/json\" -H \"Authorization: Bearer $TOKEN\" -d '{:*)"
     ]
   }
 }

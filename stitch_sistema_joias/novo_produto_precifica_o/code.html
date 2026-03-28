@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#474746",
+                        "on-tertiary-fixed": "#231b00",
+                        "tertiary-fixed": "#f5e1ae",
+                        "on-surface-variant": "#4d4637",
+                        "outline-variant": "#d0c5b2",
+                        "surface-bright": "#f9f9f9",
+                        "outline": "#7e7665",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary": "#5f5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#4a3f19",
+                        "tertiary-fixed-dim": "#d8c594",
+                        "surface-tint": "#5f5e5e",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fed977",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#e6c364",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#524620",
+                        "on-primary-container": "#40403f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary-container": "#785d00",
+                        "background": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#755b00",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#adabab",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#6b5d35",
+                        "tertiary-container": "#bbaa7b",
+                        "on-secondary-fixed-variant": "#584400",
+                        "secondary-fixed": "#ffe08f"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #C9A84C !important;
+        }
+        /* Custom range slider thumb */
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #755B00;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type='range']::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e2e2e2;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="fixed inset-y-0 left-0 z-50 flex flex-col bg-stone-950 dark:bg-black w-64 shadow-2xl">
+<div class="p-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-400 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div>
+<h1 class="text-xl font-semibold tracking-tighter text-stone-100 uppercase">Curadoria</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">Alta Joalheria</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-stone-900 text-amber-500 rounded-lg mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span>Inventário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Vendas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Configurações</span>
+</a>
+</nav>
+<div class="p-4 border-t border-stone-800 mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Suporte</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-400 hover:text-stone-200 transition-colors mx-2 my-1 font-medium text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sair</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/95 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-4">
+<span class="text-stone-400 text-sm">Inventário /</span>
+<h2 class="font-['Inter'] font-semibold text-lg tracking-tight text-on-surface">Cadastro de Produto</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-stone-400 absolute left-3 top-1/2 -translate-y-1/2 text-lg">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-stone-100 border-none rounded-full text-sm w-64 focus:ring-1 focus:ring-amber-500" placeholder="Buscar no inventário..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-stone-500 hover:text-amber-600 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center gap-2 group">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-stone-200">
+<img class="w-full h-full object-cover" data-alt="close-up of professional luxury jewelry consultant headshot in a bright boutique setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACeNSAvc9AyQdcF8EcxcMiraxS3kRFCwwLeaWChSSFaNKO2R3G9pN3R1EcM5wa3vKgX2Ed1KMCm8I5nys1q24FXzy8jo0eU_HtUpDPzNFLBjtLmo1YKp1BmJM4tlU1pG5lptnoxoOk3quTXUXKm1P0nAdB6JPalWkpD0SZRAvC4guvg9JMEIHt1a-_esiZkmO4twfBfyP6dVP6XJYepy3nJ6UjjTblUGH7MXVGzgYDaOLqudl75k78HNGQlK81DfzHLAxMXpTOVsfM"/>
+</div>
+<span class="text-sm font-medium text-stone-700 group-hover:text-amber-600 transition-colors">Artur M.</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 pb-12 px-8 flex justify-center">
+<div class="w-full max-w-[960px] flex flex-col lg:flex-row gap-8">
+<!-- Left Side: Main Form Card -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-transparent">
+<!-- Stepper -->
+<div class="px-8 py-10 bg-stone-50/50">
+<div class="flex items-center justify-between relative max-w-2xl mx-auto">
+<!-- Line behind -->
+<div class="absolute top-4 left-0 w-full h-[2px] bg-stone-200 -z-0"></div>
+<div class="absolute top-4 left-0 h-[2px] bg-secondary w-3/4 -z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Basico</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Material</span>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Pedras</span>
+</div>
+<!-- Step 4 Active -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-white border-2 border-secondary flex items-center justify-center text-secondary font-bold text-xs ring-4 ring-white">4</div>
+<span class="text-[11px] font-bold text-on-surface uppercase tracking-wider">Preco</span>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-500 font-bold text-xs ring-4 ring-white">5</div>
+<span class="text-[11px] font-medium text-stone-400 uppercase tracking-wider">Imagens</span>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="px-10 py-6 border-b border-surface-container">
+<h3 class="text-xl font-semibold tracking-tight text-on-surface">Cálculo de Custo</h3>
+<p class="text-sm text-stone-500 mt-1">Defina os parâmetros financeiros e margens para este produto.</p>
+</div>
+<!-- Info Card -->
+<div class="mx-10 mt-8 p-4 bg-[#FFF9EC] border-l-4 border-secondary flex justify-between items-center rounded-r-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+<span class="text-sm font-medium text-on-secondary-container">Cotação atual do Ouro 18K: <strong class="font-mono">R$ 350,00/g</strong></span>
+</div>
+<span class="text-xs text-secondary-fixed-dim font-medium uppercase tracking-tight">Atualizado em 27/03/2026</span>
+</div>
+<!-- Form Content -->
+<div class="px-10 py-8 space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Row 1 -->
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Custo do metal</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-stone-50 border-stone-200 rounded-lg font-mono text-stone-600 focus:ring-0 cursor-not-allowed" readonly="" type="text" value="1.680,00"/>
+</div>
+<p class="text-[10px] text-stone-400 font-mono italic">= Peso metal (4.800g) x Cotação (R$ 350,00/g)</p>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Custo das pedras</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/30 rounded-lg font-mono text-on-surface" type="text" value="3.200,00"/>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Custo mão de obra</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/30 rounded-lg font-mono text-on-surface" type="text" value="800,00"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Custos indiretos</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/30 rounded-lg font-mono text-on-surface" type="text" value="150,00"/>
+</div>
+<p class="text-[10px] text-stone-400">Embalagem, certificação, seguro</p>
+</div>
+</div>
+<div class="h-px bg-surface-container-low w-full"></div>
+<!-- Pricing Calculation Area -->
+<div class="space-y-8">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Custo total</label>
+<span class="text-2xl font-mono font-bold text-on-surface">R$ 5.830,00</span>
+</div>
+<div class="w-48 space-y-3">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-widest text-stone-500">Markup</label>
+<span class="font-mono text-secondary font-bold">2.50x</span>
+</div>
+<input class="w-full h-1 bg-stone-200 rounded-lg appearance-none cursor-pointer" max="4.0" min="1.5" step="0.1" type="range" value="2.5"/>
+<div class="flex justify-between text-[10px] font-mono text-stone-400">
+<span>1.5x</span>
+<span>4.0x</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-white flex justify-between items-center">
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500 mb-1">Preço de venda calculado</label>
+<span class="text-3xl font-mono font-bold text-secondary">R$ 14.575,00</span>
+<p class="text-[10px] text-stone-500 font-mono mt-1">= Custo total x Markup</p>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-stone-300 text-4xl">trending_up</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Preço de venda final *</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border-2 border-secondary/20 rounded-lg font-mono text-on-surface text-lg font-semibold" type="text" value="14.575,00"/>
+</div>
+<p class="text-[10px] text-stone-400">Ajuste manualmente se necessário</p>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-stone-500">Preço sugerido (consignação)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-stone-400 text-sm">R$</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/30 rounded-lg font-mono text-stone-500" type="text" value="14.575,00"/>
+</div>
+<p class="text-[10px] text-stone-400">Preço sugerido para representantes</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<div class="px-10 py-8 bg-stone-50 flex justify-between items-center">
+<button class="flex items-center gap-2 px-6 py-2.5 border border-outline-variant text-stone-600 font-medium rounded hover:bg-white transition-all">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Anterior
+                    </button>
+<button class="flex items-center gap-2 px-10 py-2.5 gold-gradient text-white font-semibold rounded shadow-lg shadow-amber-900/10 hover:brightness-110 transition-all">
+                        Próximo
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Summary Card -->
+<aside class="w-full lg:w-72 space-y-6">
+<div class="bg-stone-900 text-white p-6 rounded-xl shadow-xl">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-amber-500 mb-6">Resumo Financeiro</h4>
+<ul class="space-y-4 mb-6">
+<li class="flex justify-between items-center">
+<span class="text-stone-400 text-sm">Metal</span>
+<span class="font-mono text-sm">R$ 1.680</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-stone-400 text-sm">Pedras</span>
+<span class="font-mono text-sm">R$ 3.200</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-stone-400 text-sm">Outros</span>
+<span class="font-mono text-sm">R$ 950</span>
+</li>
+</ul>
+<div class="border-t border-stone-800 pt-4 mb-6">
+<div class="flex justify-between items-center">
+<span class="text-stone-400 text-sm font-bold">Total Custo</span>
+<span class="font-mono text-lg font-bold">R$ 5.830</span>
+</div>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 p-4 rounded-lg">
+<label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1">Lucro Estimado</label>
+<span class="font-mono text-xl font-bold text-amber-500">R$ 8.745</span>
+</div>
+</div>
+<div class="p-6 bg-white border border-surface-container-high rounded-xl">
+<h5 class="text-xs font-bold uppercase text-stone-800 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+                        Dica de Mercado
+                    </h5>
+<p class="text-xs text-stone-500 leading-relaxed">
+                        Peças de alta joalheria com gemas raras costumam suportar markups de até <strong class="text-stone-800">3.5x</strong>. Certifique-se de incluir o custo do certificado GIA/Gemlab se aplicável.
+                    </p>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

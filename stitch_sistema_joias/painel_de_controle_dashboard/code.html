@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curadoria Digital - Gestão de Luxo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eeeeee",
+              "on-primary-fixed-variant": "#474746",
+              "on-surface-variant": "#4d4637",
+              "primary-fixed-dim": "#c8c6c5",
+              "inverse-primary": "#c8c6c5",
+              "tertiary-container": "#bbaa7b",
+              "on-primary": "#ffffff",
+              "outline-variant": "#d0c5b2",
+              "outline": "#7e7665",
+              "secondary": "#755b00",
+              "surface-container-low": "#f3f3f3",
+              "on-tertiary-fixed-variant": "#524620",
+              "on-secondary-container": "#785d00",
+              "surface": "#f9f9f9",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e2e2",
+              "surface-variant": "#e2e2e2",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f1",
+              "on-tertiary-container": "#4a3f19",
+              "on-secondary": "#ffffff",
+              "on-background": "#1a1c1c",
+              "surface-dim": "#dadada",
+              "tertiary": "#6b5d35",
+              "on-primary-container": "#40403f",
+              "primary-container": "#adabab",
+              "secondary-fixed-dim": "#e6c364",
+              "background": "#f9f9f9",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e8e8e8",
+              "primary": "#5f5e5e",
+              "on-secondary-fixed-variant": "#584400",
+              "inverse-surface": "#2f3131",
+              "on-primary-fixed": "#1c1b1b",
+              "secondary-container": "#fed977",
+              "tertiary-fixed-dim": "#d8c594",
+              "surface-bright": "#f9f9f9",
+              "primary-fixed": "#e5e2e1",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#231b00",
+              "on-surface": "#1a1c1c",
+              "tertiary-fixed": "#f5e1ae",
+              "secondary-fixed": "#ffe08f"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .gold-gradient-bg {
+        background: linear-gradient(135deg, #755b00 0%, #e6c364 100%);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #d0c5b2;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="w-[280px] h-full fixed left-0 top-0 bg-[#1A1A1A] flex flex-col py-8 px-4 shadow-2xl z-50">
+<div class="mb-12 px-4">
+<h1 class="text-xl font-semibold text-[#C9A84C] tracking-widest uppercase font-headline">Curadoria Digital</h1>
+<p class="text-xs text-gray-500 font-medium mt-1">Gestão de Luxo</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active Tab: Painel -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#C9A84C] bg-white/5 rounded-lg border-l-4 border-[#C9A84C] transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Painel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span>Inventário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Vendas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Configurações</span>
+</a>
+</nav>
+<div class="pt-8 mt-auto space-y-2 border-t border-white/10">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Suporte</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 font-['Inter'] font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sair</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[280px] min-h-screen">
+<!-- TopNavBar -->
+<header class="h-16 w-full sticky top-0 z-40 bg-white shadow-sm border-b border-zinc-100 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-xl w-96 focus-within:ring-2 focus-within:ring-secondary/20 transition-all">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body" placeholder="Buscar por SKU, cliente ou gema..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-outline hover:bg-zinc-50 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-zinc-100">
+<div class="text-right">
+<p class="text-xs font-semibold text-on-surface">Diretoria Executiva</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Acesso Master</p>
+</div>
+<div class="w-10 h-10 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="portrait of a professional male executive in a dark suit with soft studio lighting and a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR3sM-KbVIxmBwhd7JbYP2vBU84AjD89RtKQ6S1kzIHxcDNDyT6gtASvLJqMphrZd1GSRxyFmP9m_pvmHPciuPTI7UL9D4mZjxoCxq4yt5HZop_N14BdAkfIEzB1tRm6P29jPKN2OY1RxJ-jcfiXX4xG9MJdm2SBM_a735kK5yc6txIv1yqU9bVrFS4awYrenpWvT2LuYnkDaQ7hRgoF9nEtuyyZ2xwtvrKe9NTwNueidy51FLDY78tCwj77rCXtKJlUo059KxM-gb"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="max-w-[1440px] p-8 space-y-8">
+<!-- Welcome Header -->
+<div class="flex items-end justify-between">
+<div>
+<h2 class="text-2xl font-semibold tracking-tight text-on-surface">Visão Geral do Portfólio</h2>
+<p class="text-outline mt-1">Bem-vindo à sua curadoria digital. Última atualização: 14:30.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest text-primary font-mono text-xs font-medium rounded-xl hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                        EXPORTAR RELATÓRIO
+                    </button>
+<button class="gold-gradient-bg flex items-center gap-2 px-5 py-2.5 text-white font-mono text-xs font-medium rounded-xl shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                        NOVO ITEM
+                    </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-secondary/10 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<span class="text-[10px] font-mono font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12.4%</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-semibold">Receita Mensal</p>
+<h3 class="text-2xl font-mono font-medium mt-2">R$ 482.900,00</h3>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-secondary/10 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">diamond</span>
+</div>
+<span class="text-[10px] font-mono font-bold text-outline bg-surface-container-low px-2 py-1 rounded">ESTÁVEL</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-semibold">Peças em Estoque</p>
+<h3 class="text-2xl font-mono font-medium mt-2">1.240</h3>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-secondary/10 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">group</span>
+</div>
+<span class="text-[10px] font-mono font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+8</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-semibold">Novos Clientes</p>
+<h3 class="text-2xl font-mono font-medium mt-2">342</h3>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-secondary/10 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+</div>
+<span class="text-[10px] font-mono font-bold text-error bg-error-container/20 px-2 py-1 rounded">PENDENTE</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-semibold">Vendas Pendentes</p>
+<h3 class="text-2xl font-mono font-medium mt-2">12</h3>
+</div>
+</div>
+<!-- Insights Section: Chart & Activity -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Sophisticated Chart (Conceptual Visual) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="text-lg font-semibold">Vendas por Categoria</h4>
+<p class="text-xs text-outline font-mono">DISTRIBUIÇÃO DE RECEITA ANUAL</p>
+</div>
+<select class="text-xs font-mono bg-surface-container-low border-none rounded-lg focus:ring-1 focus:ring-secondary">
+<option>Últimos 12 meses</option>
+<option>Últimos 6 meses</option>
+</select>
+</div>
+<div class="h-[300px] flex items-end justify-between gap-4 px-4">
+<!-- Chart Bar 1 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary-fixed-dim rounded-t-lg transition-all duration-700" style="height: 85%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] font-mono py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">85%</div>
+</div>
+<span class="text-[10px] font-mono text-outline uppercase tracking-tighter">Anéis</span>
+</div>
+<!-- Chart Bar 2 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary-fixed-dim rounded-t-lg transition-all duration-700" style="height: 62%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] font-mono py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">62%</div>
+</div>
+<span class="text-[10px] font-mono text-outline uppercase tracking-tighter">Colares</span>
+</div>
+<!-- Chart Bar 3 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary-fixed-dim rounded-t-lg transition-all duration-700" style="height: 45%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] font-mono py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">45%</div>
+</div>
+<span class="text-[10px] font-mono text-outline uppercase tracking-tighter">Pulseiras</span>
+</div>
+<!-- Chart Bar 4 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary-fixed-dim rounded-t-lg transition-all duration-700" style="height: 78%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] font-mono py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">78%</div>
+</div>
+<span class="text-[10px] font-mono text-outline uppercase tracking-tighter">Brincos</span>
+</div>
+<!-- Chart Bar 5 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-surface-container-low rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary rounded-t-lg transition-all duration-700" style="height: 92%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] font-mono py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">92%</div>
+</div>
+<span class="text-[10px] font-mono text-outline uppercase tracking-tighter font-bold text-secondary">Relógios</span>
+</div>
+</div>
+</div>
+<!-- Recent Activities -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
+<div class="mb-6">
+<h4 class="text-lg font-semibold">Atividades Recentes</h4>
+<p class="text-xs text-outline font-mono">LOG DE OPERAÇÕES</p>
+</div>
+<div class="flex-1 space-y-6 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Activity Item 1 -->
+<div class="flex gap-4">
+<div class="min-w-[4px] h-12 bg-secondary/30 rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium">Venda Concluída</p>
+<span class="text-[9px] font-mono text-outline uppercase">14:02</span>
+</div>
+<p class="text-xs text-outline mt-1">Colar Éden (Ouro 18k)</p>
+<span class="inline-block mt-2 px-2 py-0.5 rounded-full bg-green-50 text-green-700 text-[10px] font-bold">APROVADO</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4">
+<div class="min-w-[4px] h-12 bg-outline-variant rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium">Novo Cliente Registrado</p>
+<span class="text-[9px] font-mono text-outline uppercase">11:45</span>
+</div>
+<p class="text-xs text-outline mt-1">Ricardo Albuquerque</p>
+<span class="inline-block mt-2 px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed-dim text-[10px] font-bold">VIP</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4">
+<div class="min-w-[4px] h-12 bg-error/30 rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium">Alerta de Estoque</p>
+<span class="text-[9px] font-mono text-outline uppercase">09:30</span>
+</div>
+<p class="text-xs text-outline mt-1">Anel Solitário Brilhante</p>
+<span class="inline-block mt-2 px-2 py-0.5 rounded-full bg-error-container/20 text-error text-[10px] font-bold">CRÍTICO</span>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4">
+<div class="min-w-[4px] h-12 bg-secondary/30 rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium">Ajuste de Preço</p>
+<span class="text-[9px] font-mono text-outline uppercase">Ontem</span>
+</div>
+<p class="text-xs text-outline mt-1">Relógio Master Chrono</p>
+<span class="inline-block mt-2 px-2 py-0.5 rounded-full bg-surface-container-high text-primary text-[10px] font-bold">SISTEMA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Items Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center bg-white">
+<div>
+<h4 class="text-lg font-semibold">Joias em Destaque</h4>
+<p class="text-xs text-outline font-mono">PEÇAS DE ALTA ROTATIVIDADE</p>
+</div>
+<button class="text-secondary font-mono text-[10px] font-bold tracking-widest hover:underline">VER INVENTÁRIO COMPLETO</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline text-[10px] uppercase tracking-widest font-bold">
+<th class="px-8 py-4">Item</th>
+<th class="px-8 py-4">SKU / Identificador</th>
+<th class="px-8 py-4">Categoria</th>
+<th class="px-8 py-4">Disponibilidade</th>
+<th class="px-8 py-4 text-right">Valor Unitário</th>
+<th class="px-8 py-4">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-50">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-zinc-100">
+<img class="w-full h-full object-cover" data-alt="extreme close up of a luxury diamond ring with intricate gold band detail on a black reflective surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi5muFS54ZY_C-dkgNvhFdF-7CvQaRvGLjDStG8KePmDBYDC7JZusC9RN-ywHqOwul8FOMN9yd5v_j6Qp3dtZaVshKjKJDdqhhuT3YW9Rgs5ZxFVpdJ4t6pjCc2QFqSHiM7ZWYNxl8Xgd67IVgfNN0tt5T68RNgDgeU3fY3QqVB4JL-mQgivp8qiaVLDP4B-9n_o3UB4Gpox-mxpfgwgjW-EaHZBPTiaqr3VGPmLxRjRfC54G9FnGTxRBstVsFZIUqIGUtyRx5Rufr"/>
+</div>
+<span class="text-sm font-medium text-on-surface">Solitário Aurora Diamante</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="font-mono text-xs text-outline tracking-tight">SKU-2024-AD-001</span>
+</td>
+<td class="px-8 py-4">
+<span class="text-xs text-on-surface">Anéis</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold">
+<span class="w-1 h-1 bg-green-700 rounded-full"></span> 04 EM ESTOQUE
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-mono text-sm font-medium">R$ 12.800,00</span>
+</td>
+<td class="px-8 py-4">
+<button class="p-2 text-outline hover:text-secondary hover:bg-white rounded-lg transition-all opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-zinc-100">
+<img class="w-full h-full object-cover" data-alt="elegant silver and gold necklace with small blue gemstone pendant lying on white silk fabric with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd6Of9-Q5QTdDVKLhXmVmaYxq1sdHAPp2G-A_MG1-EJe6z7OobwZQTp-I3HvYDxJ5feEmOWIY98HSp0hEWz7aC5C6J6aDhb8-eoaxMpSztZnAr36__-VMsbws5EXzHGqBSf8JsTaf8w1lSXeW4YWOyAA1UoPMG3UXW-d2rZP3CdxR8wmmgVGNwZ76-sn5SpOIJ2IkrzaGa87nH6KS7MU8niYkmpWYHPUQud-O7GxgPiVSGxYpxcVJh9wP0_-YdntfunvnL1sgFRBD4"/>
+</div>
+<span class="text-sm font-medium text-on-surface">Colar Safira Imperial</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="font-mono text-xs text-outline tracking-tight">SKU-2024-SI-042</span>
+</td>
+<td class="px-8 py-4">
+<span class="text-xs text-on-surface">Colares</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container/20 text-error text-[10px] font-bold">
+<span class="w-1 h-1 bg-error rounded-full"></span> 01 EM ESTOQUE
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-mono text-sm font-medium">R$ 28.500,00</span>
+</td>
+<td class="px-8 py-4">
+<button class="p-2 text-outline hover:text-secondary hover:bg-white rounded-lg transition-all opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-zinc-100">
+<img class="w-full h-full object-cover" data-alt="luxury automatic watch with exposed mechanical movements and leather strap on a dark velvet cushion with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDUSrxUYUXO7OWvH-g39HPqz27HVWd44LiZiHFWKSkF9QBL1X3z4mT9T_I8JytaeaagzqiaBWjqvF2BWJUJjBpLWlxkWZEPbNnHtadrPtGBm1ft22lYOuuU2QKvdcZDQ7N1sDBczViiG-9lQM1W0EYWOSOS367W-W75Z656WUQqWBvnsVI3ya0rexJ32jQ5nm3Wje5nWW49QF94gfAaOEtnR_QFbmQVM7Xh3XrfXVIx7uH09Pmu5mFRa7q0piMnvvRjuuIBhxU4BYX"/>
+</div>
+<span class="text-sm font-medium text-on-surface">Chronos Black Edition</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="font-mono text-xs text-outline tracking-tight">SKU-2023-CB-990</span>
+</td>
+<td class="px-8 py-4">
+<span class="text-xs text-on-surface">Relógios</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary text-[10px] font-bold">
+<span class="w-1 h-1 bg-primary rounded-full"></span> SOB ENCOMENDA
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="font-mono text-sm font-medium">R$ 45.000,00</span>
+</td>
+<td class="px-8 py-4">
+<button class="p-2 text-outline hover:text-secondary hover:bg-white rounded-lg transition-all opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer Decoration -->
+<footer class="mt-12 py-8 px-8 border-t border-zinc-100 flex justify-between items-center opacity-50">
+<p class="text-[10px] font-mono tracking-widest text-outline">© 2024 CURADORIA DIGITAL | SISTEMA DE GESTÃO DE ALTA JOALHERIA</p>
+<div class="flex gap-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="w-2 h-2 rounded-full bg-[#1A1A1A]"></span>
+</div>
+</footer>
+</main>
+</body></html>

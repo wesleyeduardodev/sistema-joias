@@ -1,0 +1,4 @@
+# Subprojetos (cada um tem seu proprio repositorio)
+frontend/
+backend/
+.idea/

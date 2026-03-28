@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Representantes | JoiasGestor</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1a1c1c",
+              "surface-bright": "#f9f9f9",
+              "error": "#ba1a1a",
+              "background": "#f9f9f9",
+              "on-secondary-container": "#785d00",
+              "tertiary": "#6b5d35",
+              "tertiary-container": "#bbaa7b",
+              "surface-container-high": "#e8e8e8",
+              "secondary": "#755b00",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1a1c1c",
+              "surface-container-low": "#f3f3f3",
+              "primary-fixed": "#e5e2e1",
+              "secondary-fixed-dim": "#e6c364",
+              "inverse-primary": "#c8c6c5",
+              "tertiary-fixed-dim": "#d8c594",
+              "on-tertiary-fixed": "#231b00",
+              "on-surface-variant": "#4d4637",
+              "inverse-on-surface": "#f0f1f1",
+              "surface-tint": "#5f5e5e",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e2e2e2",
+              "inverse-surface": "#2f3131",
+              "outline-variant": "#d0c5b2",
+              "on-primary-container": "#40403f",
+              "surface-dim": "#dadada",
+              "surface-container-highest": "#e2e2e2",
+              "surface-container": "#eeeeee",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffe08f",
+              "on-tertiary-fixed-variant": "#524620",
+              "surface": "#f9f9f9",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-primary-fixed": "#1c1b1b",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "secondary-container": "#fed977",
+              "on-secondary-fixed": "#241a00",
+              "error-container": "#ffdad6",
+              "primary": "#5f5e5e",
+              "outline": "#7e7665",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#f5e1ae",
+              "primary-container": "#adabab",
+              "on-secondary-fixed-variant": "#584400",
+              "on-primary-fixed-variant": "#474746",
+              "on-tertiary-container": "#4a3f19"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["JetBrains Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        .jetbrains-mono-numbers {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Suppression of scrollbar for cleaner editorial look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e2e2; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="w-[280px] h-screen sticky left-0 top-0 bg-[#1A1A1A] text-[#C9A84C] flex flex-col py-8 px-4 space-y-2 shadow-2xl z-50">
+<div class="px-4 mb-10">
+<h1 class="text-xl font-semibold tracking-wide text-[#C9A84C]">JoiasGestor</h1>
+<p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Alta Joalheria</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Painel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span class="font-medium">Inventário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium">Vendas</span>
+</a>
+<!-- Active Tab: Clientes / Representantes (Closest Context) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#C9A84C]/10 text-[#C9A84C] rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-medium">Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Configurações</span>
+</a>
+</nav>
+<div class="pt-6 mt-6 border-t border-white/5 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-medium">Suporte</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-[#C9A84C] hover:bg-white/5 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium">Sair</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md flex justify-between items-center h-16 px-8 shadow-sm shadow-black/5">
+<div class="flex items-center flex-1 max-w-md">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-[#C9A84C]/50 transition-all placeholder:text-gray-400" placeholder="Buscar representante..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-gray-500 hover:text-[#C9A84C] transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-gray-500 hover:text-[#C9A84C] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<img alt="Perfil do Administrador" class="w-8 h-8 rounded-full object-cover ring-2 ring-secondary/10" data-alt="Close-up portrait of a professional male administrator in a clean white office setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQw0wmzCumVZ1Y2ij1KyYHvpBGgW2Sk4K1djOlob2aCcfekVCVD71DyrGvrkX4iLPw0huSMLNHlzQrgVG_kwUBZ9NDsdmOury7yJCDADxSOhqxuEINOGxIr-PwAFBUKQnl3b7H2WZ5YEFVrBZEQ2yQQJcWDT-ce6EARkiy0ngpVTLM_VmCVCZe1-GG6DLjWUGhsX08MWbuVi2hJVlL3hHMDvU6yG1vuHw9mLuyJV_BHYeCGvc40zjGWWVJwLreRwleJGju34VuPML"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 space-y-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-semibold tracking-tight text-on-surface">Representantes</h2>
+<p class="text-on-surface-variant mt-1">Gestão de parceiros e consultores de vendas</p>
+</div>
+<button class="gold-gradient-bg text-on-secondary-fixed px-6 py-2.5 rounded-xl font-semibold flex items-center gap-2 shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                    Novo Representante
+                </button>
+</div>
+<!-- Summary Cards: Bento Grid Style -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Representantes Ativos</p>
+<div class="flex items-center gap-2">
+<span class="text-3xl font-semibold jetbrains-mono-numbers">8</span>
+<span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+</div>
+</div>
+<div class="bg-emerald-50 p-3 rounded-lg text-emerald-600">
+<span class="material-symbols-outlined" data-icon="person_check">person_check</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Peças em Consignação</p>
+<span class="text-3xl font-semibold jetbrains-mono-numbers">215</span>
+</div>
+<div class="bg-secondary-container/20 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="package">package</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Comissões do Mês</p>
+<span class="text-3xl font-semibold jetbrains-mono-numbers text-secondary">R$ 18.400</span>
+</div>
+<div class="bg-secondary-container/20 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-xs uppercase tracking-widest">
+<th class="px-8 py-4 font-semibold">Nome</th>
+<th class="px-6 py-4 font-semibold">Telefone</th>
+<th class="px-6 py-4 font-semibold">Cidade/UF</th>
+<th class="px-6 py-4 font-semibold">Peças em Posse</th>
+<th class="px-6 py-4 font-semibold text-right">Vendas Mês</th>
+<th class="px-6 py-4 font-semibold text-right">Comissão Mês</th>
+<th class="px-6 py-4 font-semibold text-center">Status</th>
+<th class="px-8 py-4 font-semibold text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-xs">CS</div>
+<span class="font-medium text-on-surface">Carlos Silva</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant jetbrains-mono-numbers text-sm">(11) 99999-0000</td>
+<td class="px-6 py-5 text-on-surface-variant">São Paulo/SP</td>
+<td class="px-6 py-5">
+<span class="jetbrains-mono-numbers">20</span> <span class="text-xs text-on-surface-variant">peças</span>
+</td>
+<td class="px-6 py-5 text-right font-medium jetbrains-mono-numbers">R$ 18.500</td>
+<td class="px-6 py-5 text-right font-semibold text-secondary jetbrains-mono-numbers">R$ 6.475</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600">Ativo</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-xs">AF</div>
+<span class="font-medium text-on-surface">Ana Ferreira</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant jetbrains-mono-numbers text-sm">(21) 98888-1111</td>
+<td class="px-6 py-5 text-on-surface-variant">Rio de Janeiro/RJ</td>
+<td class="px-6 py-5">
+<span class="jetbrains-mono-numbers">15</span> <span class="text-xs text-on-surface-variant">peças</span>
+</td>
+<td class="px-6 py-5 text-right font-medium jetbrains-mono-numbers">R$ 22.300</td>
+<td class="px-6 py-5 text-right font-semibold text-secondary jetbrains-mono-numbers">R$ 8.920</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600">Ativo</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-xs">RL</div>
+<span class="font-medium text-on-surface">Roberto Lima</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant jetbrains-mono-numbers text-sm">(31) 97777-2222</td>
+<td class="px-6 py-5 text-on-surface-variant">Belo Horizonte/MG</td>
+<td class="px-6 py-5">
+<span class="jetbrains-mono-numbers">10</span> <span class="text-xs text-on-surface-variant">peças</span>
+</td>
+<td class="px-6 py-5 text-right font-medium jetbrains-mono-numbers">R$ 5.200</td>
+<td class="px-6 py-5 text-right font-semibold text-secondary jetbrains-mono-numbers">R$ 1.560</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600">Ativo</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-outline-variant/30 flex items-center justify-center text-gray-500 font-bold text-xs">LS</div>
+<span class="font-medium text-on-surface">Lucia Santos</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant jetbrains-mono-numbers text-sm">(41) 96666-3333</td>
+<td class="px-6 py-5 text-on-surface-variant">Curitiba/PR</td>
+<td class="px-6 py-5">
+<span class="jetbrains-mono-numbers text-gray-400">0</span> <span class="text-xs text-on-surface-variant">peças</span>
+</td>
+<td class="px-6 py-5 text-right font-medium jetbrains-mono-numbers text-gray-400">R$ 0</td>
+<td class="px-6 py-5 text-right font-semibold text-gray-400 jetbrains-mono-numbers">R$ 0</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gray-400/10 text-gray-500">Inativo</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Table -->
+<div class="px-8 py-4 bg-surface-container-lowest border-t border-outline-variant/10 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant">Mostrando <span class="font-semibold text-on-surface">4</span> de <span class="font-semibold text-on-surface">8</span> representantes</p>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container text-on-surface-variant rounded-lg disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container text-on-surface-variant rounded-lg font-medium text-xs">2</button>
+<button class="p-2 hover:bg-surface-container text-on-surface-variant rounded-lg">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contextual Decorative Element (Inventory Preview Bento) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 opacity-80">
+<div class="col-span-1 md:col-span-2 relative h-40 rounded-xl overflow-hidden group">
+<img alt="Joias Premium" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Macro photography of luxury diamond jewelry collection on dark velvet, soft focus highlights on faceted gems" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJnvnA-X6TDDgNWj_JeIi5TT04P4X4lqnLIDspiJK0R8IER5mYpkpiC5i43myIadob3DJMzBDlSUDauYR6cfVId3NOp9eCYCggKibCIeSPk4Ltu4XpxUxOSJ0R0m6avfHCx9K5zZBR2_KJNYvLB2MZP3t1cHY0bPKWF-5lrf3IZ9PcgZZS4MqoazI1AHobgz9uISBiLUFUx9_9_laJhiYJSXaoMo1z3Sfr9g4ZWY4OPP7jUuH-k2aflGAltRMMWI9Jpzk-U-qQY_Q9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-medium tracking-wide">Coleção Diamante Real • Outono 2024</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between border border-secondary/5">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Última Atualização</p>
+<p class="text-sm font-medium jetbrains-mono-numbers">Hoje, 14:32</p>
+</div>
+</div>
+<div class="bg-[#1A1A1A] p-6 rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-[#C9A84C]" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Performance Geral</p>
+<p class="text-sm font-medium text-[#C9A84C]">+12.5% vs Mês Anterior</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

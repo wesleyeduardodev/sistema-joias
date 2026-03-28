@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eeeeee",
+              "on-primary-fixed-variant": "#474746",
+              "on-surface-variant": "#4d4637",
+              "primary-fixed-dim": "#c8c6c5",
+              "inverse-primary": "#c8c6c5",
+              "tertiary-container": "#bbaa7b",
+              "on-primary": "#ffffff",
+              "outline-variant": "#d0c5b2",
+              "outline": "#7e7665",
+              "secondary": "#755b00",
+              "surface-container-low": "#f3f3f3",
+              "on-tertiary-fixed-variant": "#524620",
+              "on-secondary-container": "#785d00",
+              "surface": "#f9f9f9",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e2e2",
+              "surface-variant": "#e2e2e2",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f1",
+              "on-tertiary-container": "#4a3f19",
+              "on-secondary": "#ffffff",
+              "on-background": "#1a1c1c",
+              "surface-dim": "#dadada",
+              "tertiary": "#6b5d35",
+              "on-primary-container": "#40403f",
+              "primary-container": "#adabab",
+              "secondary-fixed-dim": "#e6c364",
+              "background": "#f9f9f9",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e8e8e8",
+              "primary": "#5f5e5e",
+              "on-secondary-fixed-variant": "#584400",
+              "inverse-surface": "#2f3131",
+              "on-primary-fixed": "#1c1b1b",
+              "secondary-container": "#fed977",
+              "tertiary-fixed-dim": "#d8c594",
+              "surface-bright": "#f9f9f9",
+              "primary-fixed": "#e5e2e1",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#231b00",
+              "on-surface": "#1a1c1c",
+              "tertiary-fixed": "#f5e1ae",
+              "secondary-fixed": "#ffe08f"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .gold-gradient {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="w-[280px] h-full fixed left-0 top-0 bg-[#1A1A1A] flex flex-col py-8 px-4 shadow-2xl z-50">
+<div class="mb-12 px-4">
+<h1 class="text-xl font-semibold text-[#C9A84C] tracking-widest uppercase">Curadoria Digital</h1>
+<p class="text-xs text-gray-500 font-medium tracking-tight mt-1">Gestão de Luxo</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">dashboard</span>
+<span class="font-['Inter'] font-medium tracking-tight">Painel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-['Inter'] font-medium tracking-tight">Inventário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] font-medium tracking-tight">Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] font-medium tracking-tight">Vendas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#C9A84C] bg-white/5 rounded-lg border-l-4 border-[#C9A84C] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] font-medium tracking-tight">Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] font-medium tracking-tight">Configurações</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-['Inter'] font-medium tracking-tight">Suporte</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-['Inter'] font-medium tracking-tight">Sair</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="h-16 w-full sticky top-0 z-40 bg-white dark:bg-zinc-900 border-b border-zinc-100 dark:border-zinc-800 shadow-sm flex items-center justify-between px-8 ml-[280px] max-w-[calc(100%-280px)]">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl w-96 focus-within:ring-2 focus-within:ring-[#C9A84C]/20 transition-all">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-['Inter']" placeholder="Buscar em relatórios..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-zinc-100">
+<div class="text-right">
+<p class="text-sm font-semibold text-on-surface">Diretor de Vendas</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Unidade Matriz</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a male executive with short hair and glasses wearing a sharp dark suit against a minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRylZiKWbsAOVgpB3ppQhGhQEmXyNzfNgpIzumxsY3K6-Y4C4I_ZTk9bQY5fH1FinDOejfrJ_hebtPct7ZFNTG9tI_z3trZgcN_lPxnaFqMyd3LNwJaiuW4t4X3ZUeG5eDCuzWU61QDQFHuy5EbxXkGh3lSwl9rBtN6gCYq1HpdShUWvrO1Ef_PUSAJcfKwZN7WKWtUZadIYg39xGdcYs60aClQKT8n3d00hgLLcNb6hISOTMAAwgUu3tzgkep5ZbipfThXhkhi021"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[280px] p-8 max-w-[1400px]">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-3xl font-semibold tracking-tight text-on-surface">Relatórios de Vendas</h2>
+<p class="text-outline mt-1 font-['Inter']">Visão consolidada da performance comercial e ativos transacionados.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-6 py-2.5 bg-surface-container-highest text-primary font-mono text-sm rounded-xl hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                    ESTE MÊS
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 gold-gradient text-white font-mono text-sm rounded-xl hover:opacity-90 shadow-lg shadow-[#755B00]/20 transition-all">
+<span class="material-symbols-outlined text-sm">file_download</span>
+                    EXPORTAR PDF
+                </button>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">+12.5%</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-medium mb-1">Vendas Totais</p>
+<h3 class="text-2xl font-mono font-medium text-on-surface">R$ 1.248.500,00</h3>
+<p class="text-[10px] text-outline mt-2 italic">Ref. ao período de 01/10 a 31/10</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</div>
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">+4.2%</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-medium mb-1">Ticket Médio</p>
+<h3 class="text-2xl font-mono font-medium text-on-surface">R$ 42.850,00</h3>
+<p class="text-[10px] text-outline mt-2 italic">Crescimento constante em alta joalheria</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">conversion_path</span>
+</div>
+<span class="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">-1.2%</span>
+</div>
+<p class="text-outline text-xs uppercase tracking-widest font-medium mb-1">Taxa de Conversão</p>
+<h3 class="text-2xl font-mono font-medium text-on-surface">18.4%</h3>
+<p class="text-[10px] text-outline mt-2 italic">Baseado em leads qualificados</p>
+</div>
+</div>
+<!-- Monthly Sales Chart Section -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm mb-8 border border-transparent">
+<div class="flex items-center justify-between mb-10">
+<h4 class="text-lg font-semibold text-on-surface">Desempenho Mensal</h4>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-xs text-outline font-medium">Meta Alcançada</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+<span class="text-xs text-outline font-medium">Projeção Próximo Mês</span>
+</div>
+</div>
+</div>
+<!-- Visual Chart Placeholder with SVG -->
+<div class="relative h-64 w-full">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#755B00" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#755B00" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="1000" y1="0" y2="0"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="1000" y1="50" y2="50"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="1000" y1="100" y2="100"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="1000" y1="150" y2="150"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="1000" y1="200" y2="200"></line>
+<!-- Area -->
+<path d="M0,180 L100,160 L200,175 L300,120 L400,140 L500,80 L600,100 L700,50 L800,65 L900,20 L1000,40 L1000,200 L0,200 Z" fill="url(#chartGradient)"></path>
+<!-- Line -->
+<path d="M0,180 L100,160 L200,175 L300,120 L400,140 L500,80 L600,100 L700,50 L800,65 L900,20 L1000,40" fill="none" stroke="#755B00" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Points -->
+<circle cx="500" cy="80" fill="#755B00" r="4"></circle>
+<circle cx="700" cy="50" fill="#755B00" r="4"></circle>
+<circle cx="900" cy="20" fill="#755B00" r="4"></circle>
+</svg>
+<div class="flex justify-between mt-4 px-2 font-mono text-[10px] text-outline uppercase tracking-tighter">
+<span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span>
+</div>
+</div>
+</div>
+<!-- Detailed Sales Log Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-transparent">
+<div class="px-8 py-6 border-b border-surface-container flex items-center justify-between bg-white">
+<h4 class="text-lg font-semibold text-on-surface">Log Detalhado de Operações</h4>
+<div class="flex items-center gap-2">
+<span class="text-xs text-outline font-medium mr-2">Filtrar por:</span>
+<select class="text-xs border-none bg-surface-container-low rounded-lg focus:ring-1 focus:ring-secondary/30 pr-8">
+<option>Todos os Pagamentos</option>
+<option>Cartão de Crédito</option>
+<option>Transferência Bancária</option>
+<option>Cripto Ativos</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface/50 text-[11px] uppercase tracking-widest text-outline font-semibold">
+<th class="px-8 py-4">Data</th>
+<th class="px-4 py-4">Pedido ID</th>
+<th class="px-4 py-4">Cliente</th>
+<th class="px-4 py-4">Itens Vendidos</th>
+<th class="px-4 py-4">Método</th>
+<th class="px-8 py-4 text-right">Valor Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="group hover:bg-surface-container-low transition-all duration-200">
+<td class="px-8 py-5 font-mono text-sm">24/10/2023</td>
+<td class="px-4 py-5 font-mono text-sm text-secondary">#INV-8842</td>
+<td class="px-4 py-5">
+<p class="text-sm font-medium text-on-surface">Beatriz Alcantara</p>
+<p class="text-[10px] text-outline">Cliente Platinum</p>
+</td>
+<td class="px-4 py-5">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="close up of a high end diamond ring with gold band on a velvet cushion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlzI1w16fYx2Sv5cspgeJlWwR7-cKpDVNGkU6DIhmMBe9j_2mzzuYwepmStoI7qSFlJbzhXK-sHmgonqzUT1RW2V4tHe5R6MXyCn9ilbPss2mbRu5FBnGnFpOn_F6HbTJSNldjvx10-FY6Ugf9XAMF3dRa1aCMHzZ7CyGJkGh1mtHs5Uy0bOQTgexqxxFs6B8IJFsyKEPa2XxuDwkE_q-9Ndi3YXDaFZlaDVmaCKIvdTJJdJQZ678j6Ga1oMPmQxJcYhyMSwdT1RB2"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center bg-surface-container-high text-[10px] font-bold">+1</div>
+</div>
+</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-800">Transferência</span>
+</td>
+<td class="px-8 py-5 text-right font-mono font-medium text-on-surface">R$ 85.400,00</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all duration-200">
+<td class="px-8 py-5 font-mono text-sm">23/10/2023</td>
+<td class="px-4 py-5 font-mono text-sm text-secondary">#INV-8841</td>
+<td class="px-4 py-5">
+<p class="text-sm font-medium text-on-surface">Ricardo Mendonça</p>
+<p class="text-[10px] text-outline">Novo Cliente</p>
+</td>
+<td class="px-4 py-5 text-sm text-outline">Relógio Oyster Perpetual 41</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-secondary-container/30 text-secondary">Cartão Amex</span>
+</td>
+<td class="px-8 py-5 text-right font-mono font-medium text-on-surface">R$ 52.120,00</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all duration-200">
+<td class="px-8 py-5 font-mono text-sm">22/10/2023</td>
+<td class="px-4 py-5 font-mono text-sm text-secondary">#INV-8840</td>
+<td class="px-4 py-5">
+<p class="text-sm font-medium text-on-surface">Sophia Marinho</p>
+<p class="text-[10px] text-outline">Cliente Diamond</p>
+</td>
+<td class="px-4 py-5 text-sm text-outline">Colar Esmeralda Colombiana</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-800">Transferência</span>
+</td>
+<td class="px-8 py-5 text-right font-mono font-medium text-on-surface">R$ 142.900,00</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all duration-200">
+<td class="px-8 py-5 font-mono text-sm">21/10/2023</td>
+<td class="px-4 py-5 font-mono text-sm text-secondary">#INV-8839</td>
+<td class="px-4 py-5">
+<p class="text-sm font-medium text-on-surface">Claudio Vasconcelos</p>
+<p class="text-[10px] text-outline">Colecionador</p>
+</td>
+<td class="px-4 py-5 text-sm text-outline">Abotoaduras em Ouro 18k</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-zinc-100 text-zinc-800">Boleto Prêmium</span>
+</td>
+<td class="px-8 py-5 text-right font-mono font-medium text-on-surface">R$ 12.800,00</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all duration-200">
+<td class="px-8 py-5 font-mono text-sm">20/10/2023</td>
+<td class="px-4 py-5 font-mono text-sm text-secondary">#INV-8838</td>
+<td class="px-4 py-5">
+<p class="text-sm font-medium text-on-surface">Juliana Paes</p>
+<p class="text-[10px] text-outline">Cliente Platinum</p>
+</td>
+<td class="px-4 py-5 text-sm text-outline">Anel Solitário Brilhante 2ct</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-800">Transferência</span>
+</td>
+<td class="px-8 py-5 text-right font-mono font-medium text-on-surface">R$ 215.000,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 border-t border-surface-container flex items-center justify-between bg-white/50">
+<p class="text-[11px] text-outline font-mono">Mostrando 5 de 1,248 registros</p>
+<div class="flex gap-2">
+<button class="p-2 border border-surface-container rounded-lg hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-surface-container rounded-lg hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

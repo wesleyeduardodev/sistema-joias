@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eeeeee",
+              "on-primary-fixed-variant": "#474746",
+              "on-surface-variant": "#4d4637",
+              "primary-fixed-dim": "#c8c6c5",
+              "inverse-primary": "#c8c6c5",
+              "tertiary-container": "#bbaa7b",
+              "on-primary": "#ffffff",
+              "outline-variant": "#d0c5b2",
+              "outline": "#7e7665",
+              "secondary": "#755b00",
+              "surface-container-low": "#f3f3f3",
+              "on-tertiary-fixed-variant": "#524620",
+              "on-secondary-container": "#785d00",
+              "surface": "#f9f9f9",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e2e2",
+              "surface-variant": "#e2e2e2",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f1",
+              "on-tertiary-container": "#4a3f19",
+              "on-secondary": "#ffffff",
+              "on-background": "#1a1c1c",
+              "surface-dim": "#dadada",
+              "tertiary": "#6b5d35",
+              "on-primary-container": "#40403f",
+              "primary-container": "#adabab",
+              "secondary-fixed-dim": "#e6c364",
+              "background": "#f9f9f9",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e8e8e8",
+              "primary": "#5f5e5e",
+              "on-secondary-fixed-variant": "#584400",
+              "inverse-surface": "#2f3131",
+              "on-primary-fixed": "#1c1b1b",
+              "secondary-container": "#fed977",
+              "tertiary-fixed-dim": "#d8c594",
+              "surface-bright": "#f9f9f9",
+              "primary-fixed": "#e5e2e1",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#231b00",
+              "on-surface": "#1a1c1c",
+              "tertiary-fixed": "#f5e1ae",
+              "secondary-fixed": "#ffe08f"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .gold-luxe-bg {
+        background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+      }
+      .glass-effect {
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f1f1f1; }
+      ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Anchor -->
+<aside class="w-[280px] h-full fixed left-0 top-0 bg-[#1A1A1A] flex flex-col py-8 px-4 shadow-2xl z-50">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-semibold text-[#C9A84C] tracking-widest uppercase font-headline">Curadoria Digital</h1>
+<p class="text-gray-500 text-xs tracking-tight font-medium mt-1">Gestão de Luxo</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Inactive -->
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">dashboard</span>
+<span class="font-['Inter'] font-medium tracking-tight">Painel</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">diamond</span>
+<span class="font-['Inter'] font-medium tracking-tight">Inventário</span>
+</a>
+<!-- Active: Clientes -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#C9A84C] bg-white/5 rounded-lg border-l-4 border-[#C9A84C] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Inter'] font-medium tracking-tight">Clientes</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">payments</span>
+<span class="font-['Inter'] font-medium tracking-tight">Vendas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">analytics</span>
+<span class="font-['Inter'] font-medium tracking-tight">Relatórios</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">settings</span>
+<span class="font-['Inter'] font-medium tracking-tight">Configurações</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-white/5 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">help</span>
+<span class="font-['Inter'] font-medium tracking-tight">Suporte</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[#C9A84C]">logout</span>
+<span class="font-['Inter'] font-medium tracking-tight">Sair</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-[280px] min-h-screen">
+<!-- TopNavBar Anchor -->
+<header class="h-16 w-full sticky top-0 z-40 bg-white shadow-sm flex items-center justify-between px-8 border-b border-zinc-100">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-[#C9A84C]/20 rounded-lg transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-0 placeholder:text-zinc-400" placeholder="Buscar clientes ou transações..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-zinc-500 hover:bg-zinc-50 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-zinc-100">
+<div class="text-right">
+<p class="text-xs font-semibold text-on-surface">Diretoria de Vendas</p>
+<p class="text-[10px] text-zinc-400 uppercase tracking-widest">Acesso Premium</p>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="close up profile portrait of a sophisticated middle aged man in a tailored dark grey suit with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWw2x4VoCThAxipHwEVISz4lxWE9d9trfMtsT3u_VMVbuNdAZ7Nazi0FZeDNGn0zIcXrRXyNwXxzWBXQMHP1BJi9591WASZ5w4awY488JXomU3MtwakwmanDCBetSClxEaQ2mnsz3n2yOiGj0cjxJ_2TDaOQa85md8D9Jlkhb1_jMfrSbN0WaDzovKNJ2Zy7UGzqXUBjpBzspxmvT0F5682SGPbDxPxDi5P6cjqB4BR-9J5AATk3NKjNI0hHXDbuOhY18b7bEypvmg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="p-8 max-w-[1400px] mx-auto space-y-10">
+<!-- Welcome Header -->
+<section class="flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-semibold tracking-tight text-on-surface">Gestão de Clientes</h2>
+<p class="text-zinc-500 mt-1">Refinando o relacionamento e fidelidade da sua base exclusiva.</p>
+</div>
+<button class="gold-luxe-bg text-white px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 shadow-lg shadow-[#C9A84C]/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">person_add</span>
+                    Novo Cliente
+                </button>
+</section>
+<!-- Top Clients Bento Grid -->
+<section>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-[#C9A84C]">verified</span>
+<h3 class="font-semibold text-lg tracking-tight uppercase text-zinc-400 text-xs tracking-[0.2em]">Clientes em Destaque</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Client Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all flex flex-col group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="elegant woman wearing pearl necklace and diamond earrings in a luxury setting with soft golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZarkG9Z87vuITmiANq3C-xlJErTAP7umIeaANvb-fMjbk8FUh5Ff-5x3dfWhzGdmLEtfKOtHt5v45f-gUJPes9LIOHftxwr7bHxrHRJjpqt5r7I3KXFFh9whAlDGpY7Vljm7VeILghMAbujE9PPyoVd7MrA-TC_YYZ-GjojvvnaG6OZfoOclidr9p9L9S0hPIg2E7xL_4a-Ak_qsrr8fJBLVU8zF_BDlDPyjwLWS5pKc0h5KD-JsKHQMvEOS-sKzOW0PxqNXN2nmF"/>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">VVIP Status</span>
+</div>
+<h4 class="text-lg font-semibold text-on-surface">Helena Cavalcanti</h4>
+<p class="text-sm text-zinc-400 mb-6">h.cavalcanti@luxmail.com</p>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono">Investimento Total</span>
+<span class="text-xl font-mono font-medium text-on-surface">R$ 452.900</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gold-luxe-bg w-[85%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-zinc-400">Última compra: 12 Out 2023</span>
+<button class="text-[#C9A84C] font-mono text-[10px] uppercase font-bold hover:underline">Ver Perfil</button>
+</div>
+</div>
+</div>
+<!-- Client Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="distinguished older gentleman with silver hair wearing a bespoke dark navy suit in a high-end office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSihOGX1YiiojluQIdrvXXE-orp4VJSOwCXdlaO0F0ouPuG66cV6mnKvJJreV9jitNCjRZj7JTLSWLRpuafO6HbAPrc85Fii0FE33ymcKR9edeJ05IXdOSLozNOcbMbOUM-6au6d7LEiKI1p0OuC9TS6w5JqQ9FOjBS43mxtyfnmZnsPaA_0NjITAICcKmput3VNcf2XNIu6FnEgdp5daR0aRyD54KiPpNAVvdEaAw43CNQeSHOxQn47IYXCoWwEdgOCNxmMm6YqOn"/>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Investidor</span>
+</div>
+<h4 class="text-lg font-semibold text-on-surface">Ricardo Mendonça</h4>
+<p class="text-sm text-zinc-400 mb-6">ricardo.m@holding.br</p>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono">Investimento Total</span>
+<span class="text-xl font-mono font-medium text-on-surface">R$ 310.250</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gold-luxe-bg w-[62%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-zinc-400">Última compra: 05 Set 2023</span>
+<button class="text-[#C9A84C] font-mono text-[10px] uppercase font-bold hover:underline">Ver Perfil</button>
+</div>
+</div>
+</div>
+<!-- Client Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-transparent hover:border-[#C9A84C]/20 transition-all flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="fashionable young woman in a chic silk dress posing in a minimalist white interior with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ6I38RH0diRUvNcyNWszdCny7D3TEcRRgaeUF4cxQFQp0HWwMEnyQMbmfy9a61bgAIG992fCM3N3TJ9cAcsrqk8wL88IfP6iP8BkGuACDcTkR2haiHqy3M5FnohgAWJXodjB7imsHMV4_f0EiN_5JSUy3w2nr12pwbPXUP5y5xKqhvoAoLawDsQuGhLME8GO2cXkGLWPfGt5FrXEou4JY0FVa5gm4U1Cl177ZsKgGq-5oFTZwBQHWEqocn-jSV0WL9FJuQ8YlHQDQ"/>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Premium Plus</span>
+</div>
+<h4 class="text-lg font-semibold text-on-surface">Beatriz Amaral</h4>
+<p class="text-sm text-zinc-400 mb-6">b.amaral@studio.com</p>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono">Investimento Total</span>
+<span class="text-xl font-mono font-medium text-on-surface">R$ 189.400</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gold-luxe-bg w-[48%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-zinc-400">Última compra: 28 Ago 2023</span>
+<button class="text-[#C9A84C] font-mono text-[10px] uppercase font-bold hover:underline">Ver Perfil</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- All Customers Table -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-zinc-50">
+<div class="p-6 border-b border-zinc-50 flex items-center justify-between">
+<h3 class="font-semibold text-on-surface">Base Geral de Clientes</h3>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-on-surface transition-all px-3 py-1.5 rounded-lg border border-zinc-100">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filtrar
+                        </button>
+<button class="flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-on-surface transition-all px-3 py-1.5 rounded-lg border border-zinc-100">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Exportar CSV
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low/50 text-[10px] uppercase tracking-widest text-zinc-400 font-semibold">
+<th class="px-8 py-4">Cliente</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">E-mail</th>
+<th class="px-6 py-4 text-right">Última Compra</th>
+<th class="px-8 py-4 text-right">Total Investido</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-all group cursor-pointer">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a man with spectacles in a neutral colored shirt and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByhINxIl_vrxg_OtodI6oo0ktoIgdROCw_cr_49XzmJ3jsb2r3D-6wMv1QDe8zqtbE55NZ9nzSBi4Pra-BGxO-j8L66CM4D4kS-ZpFUgz4_D0muoGrS0CE4OcXIEEy7YAf4cjXZsrfk1NRsu-QvAQvGuLiwvCSiHjQJ6kEx1g1ww-8MvV_G-bVRIVoQyRPMe4iE-fu9yH0MaoghPLnRa4twBj3vgyNECG8Aq_aNS98hV5SwwZtG_XKnRd6vl_ZG2SWjLjBK4vCIzqt"/>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Carlos Eduardo Torres</p>
+<p class="text-[10px] text-zinc-400">ID: #CE291</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-50 text-green-700">Ativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-zinc-500">carlos.ed@gmail.com</td>
+<td class="px-6 py-4 text-right font-mono text-xs text-zinc-500">14 Set 2023</td>
+<td class="px-8 py-4 text-right font-mono text-sm font-medium text-on-surface">R$ 12.450,00</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-all group cursor-pointer">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a young woman with curly hair wearing a white blouse in a bright airy studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC39usGct2wz4ZdE_bewnXmx_ySqzvhaGbn2Pm2ntDFkl5iL0ulYJNrCzHkdG14boygg4dBZvsNarYMo1A1jvuJ1fhStKbVBVi37s8oI8ZtVrnTvcvE5sKhDh6UNeIcKvnW8QQSevUr9PTRlGjJPwxb6T1pl8lLkOIlDTa2wti2MoaXkXQmmoXibtBKtHQ8Nl9cFWH0vHcMH9qr1h4W2T-wqikWeR_WZWyM2mHnuB4I1-eQh0Dr3ns_70x-PHqzIVDvUpirTIdoZN5w"/>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Lúcia Fontes</p>
+<p class="text-[10px] text-zinc-400">ID: #LF882</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-500">Inativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-zinc-500">lucia.f@uol.com.br</td>
+<td class="px-6 py-4 text-right font-mono text-xs text-zinc-500">02 Jan 2023</td>
+<td class="px-8 py-4 text-right font-mono text-sm font-medium text-on-surface">R$ 5.120,00</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-all group cursor-pointer">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="stylish man in a linen shirt looking away from camera with warm beach lighting in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD9i1PBjCiSY98I9OqF04S0qqT_hxmoZkjg3slUUTDYEXnqGBMDM2w3LANlCOGSHkPdceCoQKkoZPdRIo1fE84EGV0M-WKapciS4bbHxpGlCs32DXXObs5gNagtD4ZXcIvPfvtu7zgEzgjBZylweboO8i2X-zqqUY6ZX4chybKARqpj4layVPoyY2dNrrmY6MuOWnD-PtlRVs5XwLf07lk3RrG6DH5dADkJKEQZxl4prk0rOmnYsn2nKjaGjUKfRG45NmF4xUnYu7T"/>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Guilherme Vaz</p>
+<p class="text-[10px] text-zinc-400">ID: #GV112</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary">Aguardando</span>
+</td>
+<td class="px-6 py-4 text-sm text-zinc-500">g.vaz@outlook.com</td>
+<td class="px-6 py-4 text-right font-mono text-xs text-zinc-500">18 Out 2023</td>
+<td class="px-8 py-4 text-right font-mono text-sm font-medium text-on-surface">R$ 87.200,00</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-all group cursor-pointer">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="sophisticated woman with professional attire and soft makeup in a minimalist grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc12Oc41H6azfGs2fMN0jw7FXzxYEI-DqxuhvRGBXjZw3ohd22E447CpOi835YZA1xuCVq3mXZj7ZAhD1DW0HyqkgGRGqPbSDDVom2Ndc2YN39jY3buaacIfvDoac_Lkyl-Oc1sEPWY1k_Og14bWkBn9Kn8W1YEJtyGDsYnEhjYwFlA_9xxjRWKJyj1uckKI_UNNz6ZYbWzAQPCuD70q96RlRMQLGwLaURSJIK-rxKbmdo8-SJC9A0sVA-ayw8-STc2agStCHYYTNG"/>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Mariana Peixoto</p>
+<p class="text-[10px] text-zinc-400">ID: #MP044</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-50 text-green-700">Ativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-zinc-500">mari.px@icloud.com</td>
+<td class="px-6 py-4 text-right font-mono text-xs text-zinc-500">30 Set 2023</td>
+<td class="px-8 py-4 text-right font-mono text-sm font-medium text-on-surface">R$ 21.900,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-zinc-50 flex items-center justify-between text-xs text-zinc-400">
+<p>Exibindo 4 de 1.254 clientes</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-zinc-100 flex items-center justify-center hover:bg-zinc-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-[#C9A84C] text-white flex items-center justify-center font-bold">1</button>
+<button class="w-8 h-8 rounded border border-zinc-100 flex items-center justify-center hover:bg-zinc-50">2</button>
+<button class="w-8 h-8 rounded border border-zinc-100 flex items-center justify-center hover:bg-zinc-50">3</button>
+<button class="w-8 h-8 rounded border border-zinc-100 flex items-center justify-center hover:bg-zinc-50"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</section>
+</div>
+<!-- Detail Panel (Floating Preview Mockup) -->
+<aside class="fixed right-0 top-16 h-[calc(100vh-64px)] w-[400px] glass-effect shadow-2xl z-30 translate-x-full lg:translate-x-0 border-l border-zinc-100 transition-transform duration-500">
+<div class="p-8 h-full flex flex-col overflow-y-auto">
+<div class="flex justify-between items-start mb-8">
+<h3 class="text-xs uppercase tracking-[0.3em] font-bold text-zinc-400">Detalhes do Perfil</h3>
+<button class="text-zinc-400 hover:text-on-surface transition-all"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="text-center mb-10">
+<div class="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-xl mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of an elegant woman with pearls and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ9AofgNVy6L-FcISYwgV8gQTOGUXBksHs9KCMIzYsLy2rf2WHjhfM1aifcLiGiO_E1p-5dyMpVQQWqzNZvMHjSupRz17awR934xJJIgQUkrPu7Gd5ihP2bTtOT0JQosJyRWiN_lf8YrfHxxgPXMmyNs-m5XtVxFc01ys76zD4by6AVFDozBVXMctoROViFDpCA4NCY7IJGb3hA7P_dAv5g-dBeBB6jlnYDbEbQFf-c_CL50Pw2HMSXfJDbeeFSFY7KKByPvEXC_BS"/>
+</div>
+<h4 class="text-xl font-semibold">Helena Cavalcanti</h4>
+<p class="text-zinc-400 text-sm">Cliente desde Nov 2019</p>
+</div>
+<div class="space-y-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-400 mb-3 font-bold">Resumo de Ativos</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-4 rounded-xl">
+<p class="text-[10px] text-zinc-400">Total Comprado</p>
+<p class="text-lg font-mono font-bold">R$ 452.9k</p>
+</div>
+<div class="bg-surface p-4 rounded-xl">
+<p class="text-[10px] text-zinc-400">Peças Únicas</p>
+<p class="text-lg font-mono font-bold">14</p>
+</div>
+</div>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-400 mb-4 font-bold">Histórico Recente</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-zinc-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#C9A84C]">diamond</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Anel de Esmeralda Colombiana</p>
+<p class="text-[10px] text-zinc-400 font-mono">12 OUT 2023 • R$ 82.000</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-zinc-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#C9A84C]">watch</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Relógio Cartier Tank Must</p>
+<p class="text-[10px] text-zinc-400 font-mono">15 JUN 2023 • R$ 34.500</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-400 mb-3 font-bold">Preferências de Estilo</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-medium">Ouro Amarelo</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-medium">Pedras Preciosas</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-medium">Art Déco</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-medium">Vintage 1920s</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-8 border-t border-zinc-100 flex gap-4">
+<button class="flex-1 py-3 border border-zinc-200 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-zinc-50 transition-all">Editar</button>
+<button class="flex-1 py-3 gold-luxe-bg text-white rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg shadow-[#C9A84C]/20 hover:scale-[1.02] transition-all">Enviar Proposta</button>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

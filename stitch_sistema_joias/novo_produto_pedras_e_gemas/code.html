@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#584400",
+                        "outline": "#7e7665",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#e6c364",
+                        "secondary-container": "#fed977",
+                        "on-secondary-fixed": "#241a00",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed-dim": "#d8c594",
+                        "primary": "#5f5e5e",
+                        "tertiary-container": "#bbaa7b",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "surface": "#f9f9f9",
+                        "on-surface-variant": "#4d4637",
+                        "on-primary-fixed-variant": "#474746",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#524620",
+                        "surface-variant": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffe08f",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#adabab",
+                        "on-tertiary-fixed": "#231b00",
+                        "tertiary": "#6b5d35",
+                        "on-tertiary-container": "#4a3f19",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#d0c5b2",
+                        "secondary": "#755b00",
+                        "tertiary-fixed": "#f5e1ae",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-container": "#785d00",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-background": "#1a1c1c",
+                        "on-primary-container": "#40403f",
+                        "surface-tint": "#5f5e5e"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        input:focus, select:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #C9A84C !important;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#1A1A1A] flex flex-col py-8 px-4 shadow-2xl z-50">
+<div class="mb-12 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-[#C9A84C] flex items-center justify-center rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-[#1A1A1A]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div>
+<h1 class="text-xl font-semibold text-[#C9A84C] tracking-tight">Luxe Jewelry</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-mono">Management</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inventory (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#C9A84C] bg-white/5 border-r-2 border-[#C9A84C] font-medium text-sm tracking-tight transition-all rounded-l-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95" style="font-variation-settings: 'FILL' 1;">diamond</span>
+                Inventory
+            </a>
+<!-- Sales -->
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">payments</span>
+                Sales
+            </a>
+<!-- Customers -->
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">group</span>
+                Customers
+            </a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">analytics</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto pt-6 space-y-2 border-t border-white/5">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-medium text-sm tracking-tight hover:text-white hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-95">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-white/95 backdrop-blur-md z-40 flex items-center justify-between px-8 shadow-sm">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-secondary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm font-body focus:ring-2 focus:ring-[#C9A84C] transition-all" placeholder="Buscar no inventário..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="p-2 text-outline hover:bg-gray-100 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-outline hover:bg-gray-100 rounded-full transition-all">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-gray-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-semibold text-on-surface">Admin Joias</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Master Curator</p>
+</div>
+<img class="w-9 h-9 rounded-full object-cover ring-2 ring-secondary/20" data-alt="close-up portrait of a professional male jewelry store manager in a tailored dark suit with soft office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeYY9FuzEx2T1o1IObm_YFxxo8hO30hOxZy3j0Dk9HEzLjeU2xKWkDQMINn8ohCEDFOn0EgJpQHOCTLAnv15zG0epyE-YuncWTeZ0MBXELJ_wxHdgdVWh2BbpPwRESFQ5OCMYKYdjl-VFOBizGldR5-IHGqTWn9mvuPLZtc5eYq6t5JlqM6hp3uoZ5QNm0NzpbxlgQe-IUE5mIxttRMjClxQwIqzyRDTfg1r-IET13UibKse5C2_1LZKauu_JVn7mQySFNKrzAT4Pl"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 pb-32 px-12 min-h-screen">
+<div class="max-w-[900px] mx-auto">
+<!-- Page Header & Breadcrumbs -->
+<div class="mb-10">
+<nav class="flex text-xs font-mono text-outline mb-2 uppercase tracking-widest">
+<span class="hover:text-secondary cursor-pointer transition-colors">Catalogo</span>
+<span class="mx-2">/</span>
+<span class="text-on-surface font-semibold">Novo Produto</span>
+</nav>
+<h2 class="text-3xl font-headline font-semibold tracking-tight text-on-surface">Novo Produto</h2>
+</div>
+<!-- Stepper Bar -->
+<div class="mb-12 bg-surface-container-low p-1 rounded-xl flex items-center">
+<div class="flex-1 flex items-center justify-center py-3 px-4 rounded-lg bg-white shadow-sm text-secondary-fixed-dim">
+<span class="material-symbols-outlined mr-2 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Básico</span>
+</div>
+<div class="w-8 flex justify-center text-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-3 px-4 rounded-lg bg-white shadow-sm text-secondary-fixed-dim">
+<span class="material-symbols-outlined mr-2 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Material</span>
+</div>
+<div class="w-8 flex justify-center text-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-3 px-4 rounded-lg bg-secondary-fixed text-on-secondary-fixed ring-1 ring-secondary/30">
+<span class="text-xs font-bold uppercase tracking-widest">③ Pedras</span>
+</div>
+<div class="w-8 flex justify-center text-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-3 px-4 text-outline opacity-50">
+<span class="text-xs font-semibold uppercase tracking-wider">④ Preço</span>
+</div>
+<div class="w-8 flex justify-center text-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-3 px-4 text-outline opacity-50">
+<span class="text-xs font-semibold uppercase tracking-wider">⑤ Imagens</span>
+</div>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.04)] overflow-hidden border border-outline-variant/10">
+<div class="p-8">
+<!-- Section: Pedras da peça -->
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-headline font-semibold text-on-surface">Pedras da peça</h3>
+<p class="text-sm text-outline mt-1 font-body">Gerencie as gemas e classificações deste item.</p>
+</div>
+<button class="flex items-center gap-2 px-5 py-2.5 border border-secondary text-secondary rounded-lg font-medium text-sm hover:bg-secondary/5 transition-all group active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                            Adicionar Pedra
+                        </button>
+</div>
+<div class="space-y-6">
+<!-- Stone Card 1 (Detailed) -->
+<div class="bg-white border border-outline-variant/30 rounded-xl overflow-hidden">
+<div class="bg-surface-container-low px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">diamond</span>
+<h4 class="font-headline font-semibold text-sm">Pedra #1 — Diamante</h4>
+</div>
+<button class="p-2 text-error/60 hover:text-error hover:bg-error/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Tipo de pedra *</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 appearance-none cursor-pointer">
+<option selected="">Diamante</option>
+<option>Rubi</option>
+<option>Esmeralda</option>
+<option>Zircônia</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Quantidade *</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 font-mono" type="number" value="1"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Peso total (ct) *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm pl-4 pr-12 py-3 font-mono text-right" type="text" value="0.50"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono font-bold text-outline pointer-events-none">ct</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Tipo de cravação</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 appearance-none cursor-pointer">
+<option selected="">Garra</option>
+<option>Inglesa</option>
+<option>Pavê</option>
+<option>Grão</option>
+</select>
+</div>
+</div>
+<!-- Subsection: 4Cs -->
+<div class="bg-surface-container-low/50 rounded-lg p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-xs text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h5 class="text-xs font-bold uppercase tracking-[0.15em] text-on-surface-variant">Classificação 4Cs (Diamante)</h5>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] font-medium text-outline">Lapidação (Cut)</label>
+<select class="w-full bg-white border-none rounded-lg text-xs px-3 py-2.5 font-medium">
+<option selected="">Excellent</option>
+<option>Very Good</option>
+<option>Good</option>
+<option>Fair</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-medium text-outline">Cor (Color)</label>
+<select class="w-full bg-white border-none rounded-lg text-xs px-3 py-2.5 font-medium">
+<option selected="">D</option>
+<option>E</option>
+<option>F</option>
+<option>G</option>
+<option>H</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-medium text-outline">Pureza (Clarity)</label>
+<select class="w-full bg-white border-none rounded-lg text-xs px-3 py-2.5 font-medium">
+<option>FL</option>
+<option>IF</option>
+<option selected="">VVS1</option>
+<option>VVS2</option>
+<option>VS1</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-medium text-outline">Quilate (Carat)</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg text-xs px-3 py-2.5 font-mono text-right text-outline cursor-not-allowed" readonly="" type="text" value="0.50"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stone Card 2 (Minimal) -->
+<div class="bg-white border border-outline-variant/30 rounded-xl overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+<div class="bg-surface-container-low/50 px-6 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant">hexagon</span>
+<h4 class="font-headline font-semibold text-sm">Pedra #2 — Zircônia</h4>
+</div>
+<button class="p-1.5 text-error/40 hover:text-error hover:bg-error/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<div class="p-6 grid grid-cols-3 gap-6">
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Tipo de pedra *</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-2 appearance-none cursor-pointer">
+<option>Diamante</option>
+<option selected="">Zircônia</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Quantidade *</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-2 font-mono" type="number" value="12"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Peso total (ct)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-2 font-mono text-right" type="text" value="0.36"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Certificação -->
+<div class="mt-12 pt-10 border-t border-outline-variant/20">
+<div class="mb-8">
+<h3 class="text-lg font-headline font-semibold text-on-surface">Certificação</h3>
+<p class="text-sm text-outline mt-1 font-body">Documentação oficial e procedência das gemas.</p>
+</div>
+<div class="grid grid-cols-3 gap-6 mb-8">
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Instituição certificadora</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 appearance-none cursor-pointer">
+<option selected="">GIA</option>
+<option>IGI</option>
+<option>HRD</option>
+<option>IBGM</option>
+<option>Outra</option>
+<option>Nenhuma</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Número do certificado</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 font-mono" placeholder="Ex: 218549..." type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Data de emissão</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg text-sm px-4 py-3 appearance-none" type="date"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold uppercase tracking-wider text-outline">Documento</label>
+<div class="border-2 border-dashed border-outline-variant/50 rounded-xl p-10 flex flex-col items-center justify-center bg-surface-container-low/30 hover:bg-surface-container-low/50 hover:border-secondary transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-secondary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">upload_file</span>
+</div>
+<p class="text-sm font-medium text-on-surface">Arraste o PDF do certificado aqui ou clique para enviar</p>
+<p class="text-xs text-outline mt-2">Suporta apenas arquivos PDF até 5MB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Bar -->
+<footer class="fixed bottom-0 right-0 w-[calc(100%-16rem)] bg-white/95 backdrop-blur-md border-t border-outline-variant/10 px-12 py-5 flex items-center justify-center z-40">
+<div class="max-w-[900px] w-full flex items-center justify-between">
+<button class="flex items-center gap-2 px-6 py-3 border border-outline-variant text-on-surface-variant rounded-lg font-medium text-sm hover:bg-surface-container-low transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Anterior
+            </button>
+<button class="gold-gradient flex items-center gap-2 px-10 py-3 text-on-secondary-fixed rounded-lg font-bold text-sm shadow-lg shadow-secondary/20 hover:shadow-secondary/40 transition-all active:scale-95">
+                Próximo
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

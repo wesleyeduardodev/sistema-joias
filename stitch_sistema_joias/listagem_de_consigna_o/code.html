@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#4a3f19",
+                        "inverse-primary": "#c8c6c5",
+                        "outline-variant": "#d0c5b2",
+                        "on-surface-variant": "#4d4637",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-container": "#40403f",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#e6c364",
+                        "secondary": "#755b00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#6b5d35",
+                        "on-primary": "#ffffff",
+                        "outline": "#7e7665",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-container-highest": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fed977",
+                        "tertiary-fixed-dim": "#d8c594",
+                        "on-tertiary-fixed": "#231b00",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#f5e1ae",
+                        "on-surface": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#bbaa7b",
+                        "inverse-surface": "#2f3131",
+                        "primary": "#5f5e5e",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#785d00",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#584400",
+                        "primary-container": "#adabab",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed": "#ffe08f",
+                        "on-tertiary-fixed-variant": "#524620",
+                        "surface-container": "#eeeeee"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e2e2; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar (Authority: Shared Components JSON) -->
+<aside class="bg-stone-950 dark:bg-black fixed left-0 top-0 h-screen w-64 flex flex-col py-8 px-4 shadow-2xl z-50">
+<div class="mb-10 px-4">
+<h1 class="text-amber-500 font-semibold tracking-tighter text-xl">JoiasGestor</h1>
+<p class="text-stone-500 text-[10px] uppercase tracking-[0.2em] mt-1">Alta Joalheria</p>
+</div>
+<nav class="flex-1 space-y-2 bg-stone-900/50 rounded-xl p-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-400 hover:text-stone-100 hover:bg-stone-900 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] font-medium text-sm tracking-wide">Painel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-400 hover:text-stone-100 hover:bg-stone-900 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span class="font-['Inter'] font-medium text-sm tracking-wide">Inventário</span>
+</a>
+<!-- Active Tab: Consignação -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-amber-400 bg-stone-900 border-r-2 border-amber-500 transition-all duration-300 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-['Inter'] font-medium text-sm tracking-wide">Consignação</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-400 hover:text-stone-100 hover:bg-stone-900 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] font-medium text-sm tracking-wide">Vendas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-400 hover:text-stone-100 hover:bg-stone-900 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] font-medium text-sm tracking-wide">Relatórios</span>
+</a>
+</nav>
+<div class="mt-auto space-y-2 border-t border-stone-800 pt-6 px-2">
+<button class="w-full gold-gradient text-on-secondary-fixed font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 mb-6 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                Novo Kit
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 hover:text-stone-200 text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+                Configurações
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 hover:text-stone-200 text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+                Sair
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 flex justify-between items-center h-16 px-10 border-b border-stone-100">
+<div class="flex items-center gap-4">
+<h2 class="text-stone-800 font-headline font-semibold tracking-tight text-lg">Gestão de Consignação</h2>
+<div class="h-4 w-px bg-stone-200 mx-2"></div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-xs w-64 focus:ring-2 focus:ring-amber-500/20 transition-all" placeholder="Buscar kit ou representante..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-stone-500">
+<button class="hover:text-amber-600 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="hover:text-amber-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-stone-100">
+<div class="text-right">
+<p class="text-xs font-semibold text-stone-800">Admin JoiasGestor</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-wider">Perfil</p>
+</div>
+<img alt="Foto do Administrador" class="w-10 h-10 rounded-full object-cover ring-2 ring-stone-100" data-alt="close-up of a professional man in a dark suit with a focused expression, clean lighting, studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALDtJNhAccIz76Feo1njXqZtGa6wAvDf2RF1aD6Le3LCQMnbTwqkbAZLPlXHjmHTfWo_I1P_HIzSK6z6uIbw4AfglhnIfI5P5nWGastl1UdQIUL3PjTSZvr9M5Mjhzvpb8YV6eoLN97B5SIZclrjUDrl9ZYnYYDGvBJ1i6ILcqtLFzHPjP-hLykYqmCT63BDh2T9J4nUjlHCFOxShYG1gAk0-XpMe-6IGoaYw-zUmcKpGzGpcOTsku6GIcyZAjXFKwU4961npXSNmg"/>
+</div>
+</div>
+</header>
+<!-- Page Header -->
+<div class="px-10 py-8">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h1 class="text-3xl font-headline font-semibold text-on-surface tracking-tight mb-2">Consignação</h1>
+<nav class="flex items-center gap-2 text-xs text-stone-400">
+<span>Gestão</span>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-amber-600 font-medium">Kits de Consignação</span>
+</nav>
+</div>
+<button class="gold-gradient text-on-secondary-fixed px-6 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-lg shadow-amber-900/10 hover:shadow-amber-900/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Novo Kit
+                </button>
+</div>
+<!-- Dashboard Highlights (Bento Grid Style) -->
+<div class="grid grid-cols-12 gap-6 mb-10">
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-sm relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<h3 class="text-stone-500 text-xs font-semibold uppercase tracking-widest mb-4">Visão Geral de Estoque Externo</h3>
+<div class="flex items-baseline gap-4">
+<span class="text-5xl font-mono text-stone-900 tracking-tighter">R$ 153.500</span>
+<span class="text-success text-sm flex items-center gap-1 font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                                    12%
+                                </span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-8">
+<div>
+<p class="text-[10px] text-stone-400 uppercase mb-1">Total de Peças</p>
+<p class="text-xl font-mono font-medium">70</p>
+</div>
+<div>
+<p class="text-[10px] text-stone-400 uppercase mb-1">Vendas Acumuladas</p>
+<p class="text-xl font-mono font-medium">43</p>
+</div>
+<div>
+<p class="text-[10px] text-stone-400 uppercase mb-1">Kits Pendentes</p>
+<p class="text-xl font-mono font-medium">05</p>
+</div>
+</div>
+</div>
+<!-- Decorative background graphic -->
+<div class="absolute -right-10 -bottom-10 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[200px]" data-icon="diamond">diamond</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-stone-900 text-stone-100 p-8 rounded-xl shadow-lg flex flex-col justify-center border-l-4 border-amber-500">
+<p class="text-amber-500 text-xs font-semibold uppercase tracking-widest mb-4">Atenção Necessária</p>
+<h4 class="text-2xl font-headline font-medium mb-6 leading-tight">02 Kits venceram recentemente</h4>
+<p class="text-stone-400 text-sm mb-8 leading-relaxed">Representante Roberto Lima e Maria Oliveira precisam de follow-up imediato para acerto de contas.</p>
+<button class="w-fit text-amber-500 border-b border-amber-500/30 hover:border-amber-500 pb-1 text-sm font-medium transition-all">Ver kits vencidos</button>
+</div>
+</div>
+<!-- Filter Bar & Tabs -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm mb-6">
+<div class="px-8 pt-6 pb-2 border-b border-stone-50">
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex flex-col gap-1.5 min-w-[160px]">
+<label class="text-[10px] font-semibold text-stone-400 uppercase tracking-wider ml-1">Status</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm appearance-none py-2.5 px-4 focus:ring-2 focus:ring-amber-500/20 cursor-pointer">
+<option>Todos Status</option>
+<option>Ativo</option>
+<option>Pendente</option>
+<option>Vencido</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none text-lg" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 min-w-[200px]">
+<label class="text-[10px] font-semibold text-stone-400 uppercase tracking-wider ml-1">Representante</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm appearance-none py-2.5 px-4 focus:ring-2 focus:ring-amber-500/20 cursor-pointer">
+<option>Todos Representantes</option>
+<option>Carlos Silva</option>
+<option>Ana Ferreira</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none text-lg" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 min-w-[280px]">
+<label class="text-[10px] font-semibold text-stone-400 uppercase tracking-wider ml-1">Período de Envio</label>
+<div class="flex items-center bg-surface-container-low rounded-lg px-4 py-2 gap-3">
+<input class="bg-transparent border-none p-0 text-sm w-20 focus:ring-0" placeholder="Início" type="text"/>
+<span class="text-stone-300 text-xs">até</span>
+<input class="bg-transparent border-none p-0 text-sm w-20 focus:ring-0" placeholder="Fim" type="text"/>
+<span class="material-symbols-outlined text-stone-400 text-lg" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<div class="flex items-end gap-3 mt-auto mb-1.5">
+<button class="bg-stone-900 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-stone-800 transition-colors">Filtrar</button>
+<button class="text-stone-500 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-stone-100 transition-colors border border-transparent hover:border-stone-200">Limpar</button>
+</div>
+</div>
+</div>
+<!-- Tabbed Navigation -->
+<div class="px-8 flex gap-10">
+<button class="py-4 border-b-2 border-amber-500 text-stone-900 font-semibold text-sm flex items-center gap-2">
+                        Todos <span class="bg-stone-100 text-stone-500 px-2 py-0.5 rounded text-[10px] font-mono">45</span>
+</button>
+<button class="py-4 border-b-2 border-transparent text-stone-400 hover:text-stone-600 font-medium text-sm flex items-center gap-2 transition-all">
+                        Ativos <span class="bg-stone-50 text-stone-400 px-2 py-0.5 rounded text-[10px] font-mono">12</span>
+</button>
+<button class="py-4 border-b-2 border-transparent text-stone-400 hover:text-stone-600 font-medium text-sm flex items-center gap-2 transition-all">
+                        Pendente Acerto <span class="bg-stone-50 text-stone-400 px-2 py-0.5 rounded text-[10px] font-mono">05</span>
+</button>
+<button class="py-4 border-b-2 border-transparent text-stone-400 hover:text-stone-600 font-medium text-sm flex items-center gap-2 transition-all relative">
+                        Vencidos <span class="bg-error/10 text-error px-2 py-0.5 rounded text-[10px] font-mono">02</span>
+<span class="absolute top-3 -right-2 w-2 h-2 bg-error rounded-full ring-4 ring-white"></span>
+</button>
+<button class="py-4 border-b-2 border-transparent text-stone-400 hover:text-stone-600 font-medium text-sm flex items-center gap-2 transition-all">
+                        Encerrados <span class="bg-stone-50 text-stone-400 px-2 py-0.5 rounded text-[10px] font-mono">26</span>
+</button>
+</div>
+</div>
+<!-- Data Table (The "No-Line" Rule Applied) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-stone-50">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-stone-50/50">
+<th class="px-8 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]"># Kit</th>
+<th class="px-6 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Representante</th>
+<th class="px-6 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Peças</th>
+<th class="px-6 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Enviado em</th>
+<th class="px-6 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Prazo</th>
+<th class="px-6 py-5 text-left text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Vendidas</th>
+<th class="px-6 py-5 text-right text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Valor Total</th>
+<th class="px-6 py-5 text-center text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Status</th>
+<th class="px-8 py-5 text-right text-[10px] font-bold text-stone-400 uppercase tracking-[0.15em]">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-50">
+<!-- Row 1: Ativo -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-sm font-medium text-amber-700">#KIT-0045</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-xs">CS</div>
+<span class="text-sm font-semibold text-stone-800">Carlos Silva</span>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-stone-600 font-mono">20</td>
+<td class="px-6 py-6 text-sm text-stone-500">01/03/2026</td>
+<td class="px-6 py-6 text-sm text-stone-500">31/03/2026</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 w-16 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-stone-800 w-[40%]"></div>
+</div>
+<span class="text-xs font-mono font-medium">8/20</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right font-mono text-sm font-semibold text-stone-900">R$ 45.000</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-50 text-green-600">Ativo</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-stone-200 rounded-lg transition-colors text-stone-400 hover:text-stone-900">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Pendente Acerto -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-sm font-medium text-amber-700">#KIT-0044</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xs">AF</div>
+<span class="text-sm font-semibold text-stone-800">Ana Ferreira</span>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-stone-600 font-mono">15</td>
+<td class="px-6 py-6 text-sm text-stone-500">15/02/2026</td>
+<td class="px-6 py-6 text-sm text-stone-500">15/03/2026</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 w-16 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-stone-800 w-[80%]"></div>
+</div>
+<span class="text-xs font-mono font-medium">12/15</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right font-mono text-sm font-semibold text-stone-900">R$ 28.000</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-600">Pendente Acerto</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-stone-200 rounded-lg transition-colors text-stone-400 hover:text-stone-900">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Vencido (Alert Highlight) -->
+<tr class="bg-red-50/30 hover:bg-red-50 transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-sm font-medium text-red-700">#KIT-0043</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold text-xs">RL</div>
+<span class="text-sm font-semibold text-stone-800">Roberto Lima</span>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-stone-600 font-mono">10</td>
+<td class="px-6 py-6 text-sm text-stone-500">01/02/2026</td>
+<td class="px-6 py-6 text-sm text-red-600 font-semibold">01/03/2026</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 w-16 bg-red-100 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-[30%]"></div>
+</div>
+<span class="text-xs font-mono font-medium text-red-600">3/10</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right font-mono text-sm font-semibold text-stone-900">R$ 18.500</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-600 text-white shadow-sm">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span>
+                                    Vencido
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-red-100 rounded-lg transition-colors text-red-400 hover:text-red-700">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Acertado -->
+<tr class="hover:bg-surface-container-low transition-colors group opacity-75">
+<td class="px-8 py-6">
+<span class="font-mono text-sm font-medium text-stone-400">#KIT-0042</span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold text-xs">LS</div>
+<span class="text-sm font-semibold text-stone-500">Lucia Santos</span>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-stone-400 font-mono">25</td>
+<td class="px-6 py-6 text-sm text-stone-400">01/01/2026</td>
+<td class="px-6 py-6 text-sm text-stone-400">31/01/2026</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 w-16 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-stone-400 w-[80%]"></div>
+</div>
+<span class="text-xs font-mono font-medium text-stone-400">20/25</span>
+</div>
+</td>
+<td class="px-6 py-6 text-right font-mono text-sm font-semibold text-stone-400">R$ 62.000</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-stone-100 text-stone-500">Acertado</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-stone-200 rounded-lg transition-colors text-stone-400 hover:text-stone-900">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-8 py-6 flex items-center justify-between bg-white border-t border-stone-50">
+<p class="text-xs text-stone-400">Exibindo <span class="text-stone-900 font-medium">4</span> de <span class="text-stone-900 font-medium">45</span> kits</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded flex items-center justify-center text-stone-400 hover:bg-stone-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="keyboard_double_arrow_left">keyboard_double_arrow_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-stone-400 hover:bg-stone-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<span class="px-3 text-xs font-bold text-amber-600">1</span>
+<button class="w-8 h-8 rounded flex items-center justify-center text-stone-400 hover:bg-stone-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-stone-400 hover:bg-stone-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="keyboard_double_arrow_right">keyboard_double_arrow_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Tooltip / Global FAB (Conditional) -->
+<div class="fixed bottom-10 right-10 flex flex-col items-end gap-3">
+<button class="group relative flex items-center justify-center w-14 h-14 rounded-full bg-stone-900 text-amber-400 shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<div class="absolute right-full mr-4 px-3 py-1 bg-stone-900 text-white text-[10px] uppercase tracking-widest rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Suporte
+            </div>
+</button>
+</div>
+</body></html>

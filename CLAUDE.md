@@ -13,7 +13,7 @@
 
 - Banco de dados roda em container Docker via `docker-compose.yml`
 - Para subir: `docker compose up -d`
-- Conexao: `localhost:5432`, database `sistema_joias`, user `joias_user`, password `joias_dev_2026`
+- Conexao: `localhost:5439`, database `sistema_joias`, user `joias_user`, password `joias_dev_2026`
 - Migrations gerenciadas pelo Flyway (executam automaticamente ao iniciar o backend)
 
 ## Documentacao

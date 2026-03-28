@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#4d4637",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#f5e1ae",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#755b00",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface": "#f9f9f9",
+                        "primary-container": "#adabab",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#ffe08f",
+                        "primary": "#5f5e5e",
+                        "on-background": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#4a3f19",
+                        "on-primary-container": "#40403f",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#6b5d35",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#584400",
+                        "surface-dim": "#dadada",
+                        "surface-bright": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#d8c594",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#bbaa7b",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-container": "#785d00",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#d0c5b2",
+                        "on-tertiary-fixed-variant": "#524620",
+                        "surface-container-low": "#f3f3f3",
+                        "secondary-fixed-dim": "#e6c364",
+                        "on-secondary-fixed": "#241a00",
+                        "outline": "#7e7665",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary-container": "#fed977",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #755B00 0%, #E6C364 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Shell SideNavBar (Suppressed for focused registration flow as per UX Goal - Priority on Canvas) -->
+<!-- TopNavBar Simulation (Using JSON structure as guide) -->
+<header class="fixed top-0 left-0 right-0 h-16 glass-panel z-50 flex justify-between items-center px-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-4">
+<span class="text-[#C9A84C] font-semibold tracking-tight text-lg">JoiasGestor</span>
+<span class="h-4 w-px bg-outline-variant opacity-20"></span>
+<span class="text-sm font-medium text-primary">Novo Produto</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-primary hover:text-[#C9A84C] transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-sm font-medium">Suporte</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a male jewelry administrator in a minimalist setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkc68uMFYhSFUYXV7rDQNQ6is-qqBXP1hQ5xtlV457psH8Nk5cZGCwocX13ALXBCOhpuNZAwQEATMrG8a2NP1SB9usrMOLb7mYQ-mrxpXKtb4-U3El3j7m-CHFCuPxn4Zhuko9zP9UntKIXnB5YY1WH2sbGndfCoqBEImoDHDaxUyt8qRJjNVaNtj2WT-fKe5fI1LnVtaMBil_txLjhuIwzwr7RtSLm7DOZuEMywIwreKurFWnNIPLvXx9pXy3z4-u_UDHaGcIaFkd"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 min-h-screen flex flex-col items-center px-6">
+<!-- Stepper Bar -->
+<div class="w-full max-w-[900px] mb-12">
+<div class="flex items-center justify-between relative">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-0 w-full h-[2px] bg-surface-container-high -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<span class="text-xs font-semibold text-secondary">Básico</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<span class="text-xs font-semibold text-secondary">Material</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<span class="text-xs font-semibold text-secondary">Pedras</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<span class="text-xs font-semibold text-secondary">Preço</span>
+</div>
+<!-- Step 5 Active -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-white border-2 border-secondary text-secondary flex items-center justify-center shadow-md font-bold">
+                        5
+                    </div>
+<span class="text-xs font-bold text-on-surface">Imagens</span>
+</div>
+</div>
+</div>
+<!-- Main Form Card -->
+<div class="w-full max-w-[900px] bg-surface-container-lowest rounded-xl p-10 shadow-[0_8px_40px_rgba(0,0,0,0.02)]">
+<div class="mb-10 text-center">
+<h1 class="text-3xl font-bold tracking-tight text-on-surface mb-2">Imagens do Produto</h1>
+<p class="text-primary font-medium">Adicione fotos de alta qualidade. A primeira imagem será a principal.</p>
+</div>
+<!-- Upload Area -->
+<div class="w-full h-[220px] border-2 border-dashed border-outline-variant bg-surface-container-low rounded-xl flex flex-col items-center justify-center group cursor-pointer hover:bg-surface-container-high transition-all duration-300 mb-12">
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[32px]">cloud_upload</span>
+</div>
+<p class="text-on-surface font-semibold mb-1">Arraste imagens aqui ou clique para selecionar</p>
+<p class="text-primary text-xs">PNG, JPG até 5MB cada. Máximo 10 imagens.</p>
+</div>
+<!-- Image Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Image 1: Main -->
+<div class="relative group aspect-square rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Elegant close-up of a high-end 18k yellow gold ring with a large brilliant-cut diamond, front view on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHOpdP1JnA6LBEueZZzj1gPERzVyEb8ZnIvpyKv9Tsyi0rF29SE-qVffJCiZS_84KMxghFDUTeTqQDtusESMNMx7ht8KAKHFyDXJD1DCTlZkib3L-Dl5ZqRjfjvE8Q1Jgee0AZLpjnXsJszB2Qf2RCgAbNS13IV7IkJAVK9TVI6Wkz7rW7lKJsHhA5loAueiJax-WW6l6dpfqYIIT_kjUmuQCnERlBN6QZefwAEL_gZFFSULeNGHNIuIPoI67N-GJJmoKopDTTqrQ9"/>
+<div class="absolute top-2 left-2 p-1.5 bg-white/90 backdrop-blur rounded-lg text-primary cursor-move opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</div>
+<div class="absolute top-2 right-2 flex gap-2">
+<span class="px-2 py-1 bg-secondary text-white text-[10px] font-bold uppercase tracking-wider rounded-lg shadow-sm">Principal</span>
+</div>
+<button class="absolute bottom-2 right-2 p-2 bg-error/90 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Image 2: Model -->
+<div class="relative group aspect-square rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Close-up of a delicate hand wearing a luxury gold diamond ring, soft cinematic lighting with warm skin tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqGDCs1y27444sQE6mntT-ugK9243OyCQe7667mg6gTgjgzBE9xaHUct42XUuN63AqF-TQDllTo8-iTufp6zWx6S-Fyz4Ij_rdsdX8lgBbJXNMPIzFGcRNMySDCpLjF79Cn9o9zIsDfRjw2qtd7_mT04WX_ebqyIQNd-3ek4VRt89eHC5PMnJ-bAOmSKYNyiHXXHOgFdlcYQcopLQAleSIuGCpiw_r3CZHdTu4_55FMceX-9OdJwhk3mUxvIgoC2Wq-tI7xt6tMcaQ"/>
+<div class="absolute top-2 left-2 p-1.5 bg-white/90 backdrop-blur rounded-lg text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary text-[10px] font-bold uppercase tracking-wider rounded-lg border border-outline-variant/20">Modelo</span>
+</div>
+<button class="absolute bottom-2 right-2 p-2 bg-error/90 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Image 3: Detail -->
+<div class="relative group aspect-square rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Extreme macro photography showing the intricate details of a diamond setting on a gold ring, sharp focus on the prongs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbwLvlLzXTYXnXSiId798hjHVmbN7Knf3IcGJNguYy2P-riCXUdxrWft0tD795LLbzyJTInnjVVcXSGtc6QjRsjjI-kn-EukK8InX570UQLvB7AHUG4Bhk-4R43jwssxCfA4K9HAIBpTjI3r6ZGLiOU4Mlm7-_RQERuXP-gsVofIKthrMxolB27P-eEhhFxhTKNvIBnL_YhBdxmUZcn5R0AUbUbvHt_ftRH4Pobm6XEDhCDxyl1SeMTJs8C2Xk6mggNOdi-QWWRRxh"/>
+<div class="absolute top-2 left-2 p-1.5 bg-white/90 backdrop-blur rounded-lg text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary text-[10px] font-bold uppercase tracking-wider rounded-lg border border-outline-variant/20">Detalhe</span>
+</div>
+<button class="absolute bottom-2 right-2 p-2 bg-error/90 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Image 4: Certificate -->
+<div class="relative group aspect-square rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Clean scan of an official GIA diamond grading report with technical charts and certifications on high-quality paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDslsbo5dt_TOv6CRVoN0bqxkmZrjvNE7uahEIFFIwNXy4OXgqewYlchuHQLicpGGHjS9oGuuKHkCIZgc9lDAg67GjBd2BhQQirvxCcCCzyJofSGwww3rmFcKmNvbHR-5yVnaa3wOkR6Y5VW_ANFjMBt99k4H2ZVC-e6GzFWfLG9nJAuXdgKdMc6Mc-4s0vcjRlWjl-I1Ho_Kc0Xtysoq1Y0irnYyfFInhk1lCGp9nv5YYzE30t4cv0PJBolvonBQoHdVtNHcLlIfx8"/>
+<div class="absolute top-2 left-2 p-1.5 bg-white/90 backdrop-blur rounded-lg text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary text-[10px] font-bold uppercase tracking-wider rounded-lg border border-outline-variant/20">Certificado</span>
+</div>
+<button class="absolute bottom-2 right-2 p-2 bg-error/90 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Helper Text -->
+<div class="flex items-start gap-3 p-4 bg-surface rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<p class="text-sm text-primary italic leading-relaxed">
+                    Dica: Use fundo branco para a foto principal. Inclua fotos em uso (modelo), detalhes da pedra, e o certificado.
+                </p>
+</div>
+</div>
+<!-- Sticky Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 h-24 glass-panel border-t border-outline-variant/10 px-8 flex items-center justify-center z-40">
+<div class="w-full max-w-[900px] flex justify-between items-center">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg border border-outline text-on-surface font-semibold hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Anterior
+                </button>
+<button class="gold-gradient flex items-center gap-3 px-10 py-4 rounded-lg text-on-secondary-fixed font-bold text-lg shadow-[0_8px_20px_-6px_#755B00] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Salvar Produto
+                    <span class="material-symbols-outlined text-[24px]">done_all</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

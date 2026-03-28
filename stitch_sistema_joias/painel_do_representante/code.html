@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JoiasGestor - Dashboard Carlos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#4a3f19",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary-fixed-dim": "#e6c364",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#755b00",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary-container": "#40403f",
+                        "tertiary-fixed-dim": "#d8c594",
+                        "surface-dim": "#dadada",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container": "#eeeeee",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface-variant": "#4d4637",
+                        "primary-container": "#adabab",
+                        "outline-variant": "#d0c5b2",
+                        "on-secondary-fixed-variant": "#584400",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline": "#7e7665",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#ffe08f",
+                        "primary": "#5f5e5e",
+                        "tertiary": "#6b5d35",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-container": "#fed977",
+                        "tertiary-container": "#bbaa7b",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-fixed": "#f5e1ae",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-container": "#785d00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#524620"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mono-nums { font-family: 'JetBrains Mono', monospace; }
+        .gold-gradient { background: linear-gradient(135deg, #755B00 0%, #E6C364 100%); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-neutral-50 dark:bg-neutral-900 flex flex-col p-6 z-50">
+<div class="mb-10">
+<h1 class="text-xl font-semibold tracking-tighter text-neutral-900 dark:text-white">JoiasGestor</h1>
+<p class="text-xs text-neutral-500 font-sans">Consultor de Luxo</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-neutral-800 text-amber-700 dark:text-amber-400 font-medium rounded-lg transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span class="text-sm tracking-tight">Peças em Posse</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-sm tracking-tight">Minhas Vendas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="text-sm tracking-tight">Acertos</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 flex items-center gap-3 border-t border-neutral-200 dark:border-neutral-800">
+<img alt="Sales Representative Profile" class="w-10 h-10 rounded-full object-cover" data-alt="professional headshot of a stylish male sales representative in a tailored dark suit with warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkMyC3KHpp1WdzX-SRnRuo_2RiRVv7Il_hywaN7eUauJbm2qetvBAEukUxL5ojhgwdabxD4gDVOUOLLN07l2HHcG-2whp0S6a8ToZYJWvdNPU8XkeVmpFEseSJyx0h2OIbcjByR0781yCayLIIHoLeuTADVD9BkB9z5fB0NoH-I1BAI8HPWlLsQAoaeQAjLsXc4g8uBBFzR3WgCjTppvdgg6fvTMvXYsIPCtPwQraqCUQwcVvXPGwG2iIhqGwBxwg1AdmyTqcojAMU"/>
+<div>
+<p class="text-sm font-semibold text-neutral-900 dark:text-white">Carlos Silva</p>
+<p class="text-[10px] uppercase tracking-widest text-neutral-500">Premium Rep</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 z-40 flex items-center justify-between w-[calc(100%-16rem)] ml-64 px-8 py-4 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-xs font-mono focus:ring-2 focus:ring-secondary/20 transition-all outline-none" placeholder="Buscar peças, clientes ou acertos..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-full p-2 transition-all text-neutral-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-full p-2 transition-all text-neutral-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-neutral-200 mx-2"></div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono font-medium tracking-tight text-neutral-400 uppercase">Status: Online</span>
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 p-8 min-h-screen">
+<!-- Greeting Section -->
+<section class="mb-10">
+<h2 class="text-4xl font-semibold tracking-tight text-neutral-900">Olá, Carlos!</h2>
+<p class="text-on-surface-variant font-medium mt-1">Representante Comercial</p>
+</section>
+<!-- ROW 1: KPI CARDS -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Meta do Mês -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-medium uppercase tracking-wider text-neutral-500">Meta do Mês</span>
+<span class="material-symbols-outlined text-secondary" data-icon="target">track_changes</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<p class="mono-nums text-2xl font-semibold text-neutral-900">R$ 30.000</p>
+<p class="text-[10px] text-neutral-400 mt-1">Objetivo mensal</p>
+</div>
+<!-- Simplified Circular Progress -->
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-high" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="47.7" stroke-width="3"></circle>
+</svg>
+<span class="absolute text-[10px] font-mono font-bold text-secondary">62%</span>
+</div>
+</div>
+</div>
+<!-- Vendas do Mês -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-medium uppercase tracking-wider text-neutral-500">Vendas do Mês</span>
+<span class="material-symbols-outlined text-green-600" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="mono-nums text-2xl font-semibold text-neutral-900">R$ 18.500</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[10px] font-mono text-green-600 font-bold">+12%</span>
+<span class="text-[10px] text-neutral-400">em relação a fev</span>
+</div>
+</div>
+</div>
+<!-- Comissão Acumulada -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-medium uppercase tracking-wider text-neutral-500">Comissão Acumulada</span>
+<span class="material-symbols-outlined text-secondary" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="mono-nums text-2xl font-semibold text-neutral-900">R$ 6.475</p>
+<p class="text-[10px] text-neutral-400 mt-1">Disponível para saque</p>
+</div>
+</div>
+<!-- Peças em Posse -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-medium uppercase tracking-wider text-neutral-500">Peças em Posse</span>
+<span class="material-symbols-outlined text-neutral-400" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="mono-nums text-2xl font-semibold text-neutral-900">12 peças</p>
+<p class="text-[10px] text-neutral-400 mt-1">Valor em estoque: R$ 42.000</p>
+</div>
+</div>
+</section>
+<!-- ROW 2: TWO COLUMNS -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+<!-- Próximos Acertos -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-6 py-5 border-b border-surface-container flex items-center justify-between">
+<h3 class="font-semibold text-neutral-900">Próximos Acertos</h3>
+<span class="material-symbols-outlined text-neutral-400" data-icon="calendar_today">calendar_today</span>
+</div>
+<div class="p-6 space-y-4 flex-1">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<div>
+<p class="text-sm font-mono font-medium text-neutral-800">#KIT-0045</p>
+<p class="text-xs text-neutral-500">Prazo: 31/03/2026 (4 dias)</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase tracking-tighter">Próximo</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center text-neutral-500">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<div>
+<p class="text-sm font-mono font-medium text-neutral-800">#KIT-0041</p>
+<p class="text-xs text-neutral-500">Prazo: 15/04/2026 (19 dias)</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-neutral-200 text-neutral-500 text-[10px] font-bold rounded uppercase tracking-tighter">Agendado</span>
+</div>
+</div>
+<div class="px-6 py-4 bg-neutral-50 text-center border-t border-surface-container">
+<a class="text-xs font-semibold text-secondary hover:text-on-secondary-fixed-variant transition-colors flex items-center justify-center gap-1" href="#">
+                        Ver todos os acertos <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Vendas Recentes -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-surface-container flex items-center justify-between">
+<h3 class="font-semibold text-neutral-900">Vendas Recentes</h3>
+<button class="text-xs text-neutral-400 hover:text-secondary font-mono">FILTRAR</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] font-mono text-neutral-400 uppercase tracking-widest bg-neutral-50">
+<th class="px-6 py-3 font-medium">Data</th>
+<th class="px-6 py-3 font-medium">Peça</th>
+<th class="px-6 py-3 font-medium">Cliente</th>
+<th class="px-6 py-3 font-medium text-right">Valor</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-xs font-mono">27/03</td>
+<td class="px-6 py-4 text-xs font-medium text-neutral-800">Anel Solitário 18k</td>
+<td class="px-6 py-4 text-xs text-neutral-500">Maria Oliveira</td>
+<td class="px-6 py-4 text-xs font-mono text-right font-semibold text-neutral-900">R$ 4.500</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-xs font-mono">25/03</td>
+<td class="px-6 py-4 text-xs font-medium text-neutral-800">Colar Riviera Diamond</td>
+<td class="px-6 py-4 text-xs text-neutral-500">Pedro Santos</td>
+<td class="px-6 py-4 text-xs font-mono text-right font-semibold text-neutral-900">R$ 1.200</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-xs font-mono">23/03</td>
+<td class="px-6 py-4 text-xs font-medium text-neutral-800">Brinco Pérola Natural</td>
+<td class="px-6 py-4 text-xs text-neutral-500">Julia Costa</td>
+<td class="px-6 py-4 text-xs font-mono text-right font-semibold text-neutral-900">R$ 1.650</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 text-center">
+<button class="text-[10px] font-mono font-bold text-neutral-400 hover:text-secondary tracking-widest transition-colors uppercase">Expandir Histórico</button>
+</div>
+</div>
+</section>
+<!-- ROW 3: PEÇAS EM POSSE -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold text-neutral-900">Peças em Posse</h3>
+<span class="h-[1px] flex-1 mx-6 bg-surface-container"></span>
+<span class="text-[10px] font-mono text-neutral-400">VITRINE ATIVA</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Anel de Ouro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close-up of a luxury gold engagement ring with a large central diamond on a soft velvet background with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkHsSSNySfLxzw2aUH3Vq3jmytOwBNDnz0vXezTLFlLxILbPxuHhredBmt629edmXXanth0-KJn3BgEv-nybbIigK36o935HtZN0-whpnb0mPIo38nB0XyjNIR_0NVGFljjs38PPCtM9OlCXiFVAauIfyXV2BJZw1ryl2sWqgwLNb_weu_kPO9hu9zuKp3hmTWprO4uJLmmppFWUtZcehdOv5ScpLhh0GV5q_cG6yU-tJUFVkBez7WKxMPJOyOKmLzpdoWkiKeOVo"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Anel de Ouro 18k</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-001</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 4.500</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Colar de Pérolas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="elegant string of natural white pearls lying on a dark textured surface with dramatic top lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdw5dHQ9LW387J0fiiAjQgPrUKtz7TRi2p3p2KJ48e6J8bA_7qJGgE-2b9U7sR3GjEJs8eps5bs5eGrz4_WwVOIYuAji1WxpwdHl4csSDGGiQe1_QHzafZjMnwzvjYAzuXrq4WlJFTXh__gK5_Vy0W6L0TUdqKOy97NyjvKjx-bwKyl04NkWK_Bfdru-Hfca-mKeVjdXDX9XlYqVecUlXT_BZzYPCIGAWvkrHmiTE3xMmqqGcDSGK5ydK0c3aM4brRHka3aylUMFhH"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Colar de Pérolas</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-002</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 3.200</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Brinco Esmeralda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="pair of deep green emerald earrings set in silver with sparkling diamond accents under bright studio light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABgpaWeEf9twe2Yvdkg8jWUIz1lLhRus0UnBKD2vA6bsQ2FGHN8pNk8GOxrjyvJm7rcJezyNBAQLqVnqgjulp4ymEtzmJBwKyz5FtXCIU6WyMk3MkmVPWxVRayz-vhtpbalbkHTZsDEqSk_1BUYNOJ9OxP79K4fUSHU0oiIknYWNzo1wWDDHI33J6tXcSuUUy1AX_EpNP0_C9op8uovL1U6xSszLFRNF47jMwQwRT93d-Lzpcusuh-DoNYMDyXoEIi2JC2ioVeiYJa"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Brinco Esmeralda</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-003</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 2.800</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Pulseira Cartier Style" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="sleek golden bangle bracelet on a minimalist white pedestal with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8b2zZ4ln1WyZMLMSexEPEYEQmcSE028EFSygGosXLrE61MEFnUOX6jGWjyeG3RgJJ1ybOXLEOqDiZmlp0worAx1baDEBhOmKWqLHL784f7LanYDmjd80g2iKLuXA7IMM5ynS1w1ZztxHkG4_R1Y8D8wrXxgYVyq2nUbJmt8HCY8eEn3v8jK6xq2c7sjKcrkmCCzq_E8ZXdS5IxNNHvrSvdQ1-fPcJ1LVUuHYDoAVDO7pLXXp66_Ls7kkgIa3zEefubz39WqkNFYTg"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Pulseira Riviera</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-004</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 5.900</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Relógio Luxury" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="mechanical luxury watch with silver finish and black leather strap on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgEayhw3gHa4JnUYZR4Ewkpvh4DCqatDNlArwOjWJQuQSi_ibfNgNJH4L6rt4o3k91nrnCJa9LjaA9yPRog8-X9mqkk8bkxBc03tDKj2NDsOm_bJtFrwZjlS2vdebK5enAqvn1L3NIgyxy_7N9tM12AGi3-7iqTVpcjkohkGHB0NeLw89_hr380a9QCwXmwkNBVPDRaewMVY0xGoxaluNGyt_IiPjL7Rq86GIBUwpuZ0RIZz1FhfZ_WmR7oJM8kb_-Zq7Xx7z53cwA"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Relógio Silver Classic</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-005</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 12.000</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-transparent hover:border-secondary/20 transition-all hover:shadow-md group">
+<div class="aspect-square rounded-md overflow-hidden mb-3 bg-neutral-100">
+<img alt="Anel Safira" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of a sapphire and diamond ring with a deep blue gemstone set in white gold" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYvyeFf4hOWSSON-17J6SbPvBDxBbdSmQwS5iiTWa3Wu2CpAEQDC5XJ9OBUJcGgeQF64sX3heN2IgZXVt2zTSNJFP06ZCgBbeoZ-JiW6WxyGZDDeZOVo3txZ8X9Z-ZWIle50ZNx5gheqop_wALNeEpnjwaNEAUyqqvdnEtRuiOYAnn2DL84AxS9RTp9F33H4BjIj29oLEEYU1ZV-Hfh8QvcXC9gyTfTDfPfXmP1zO7AVxMeBQ6YDtWgTz0AuJlAMHoaqQ_M_KIHco"/>
+</div>
+<p class="text-xs font-bold text-neutral-800 truncate">Anel Safira Real</p>
+<p class="text-[9px] font-mono text-neutral-400 mt-0.5">#SER-006</p>
+<p class="text-xs font-mono font-bold text-secondary mt-2">R$ 7.250</p>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="px-8 py-3 rounded-md border border-secondary text-secondary text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all duration-300 flex items-center gap-2">
+                    Ver todas as peças 
+                    <span class="material-symbols-outlined text-sm" data-icon="east">east</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Only for Dashboard as per rules) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 rounded-full gold-gradient shadow-xl text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</body></html>

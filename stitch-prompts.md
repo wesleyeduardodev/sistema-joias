@@ -6,6 +6,38 @@
 
 ---
 
+## Status de Geracao
+
+| # | Tela | Status |
+|---|---|---|
+| — | Design System Global | Gerado pelo Stitch (automatico) |
+| 1.1 | Login | Gerado |
+| 1.2 | Registro | Pulado (nao e prioridade MVP) |
+| 1.3 | Recuperar Senha | Pulado (nao e prioridade MVP) |
+| 1.4 | Layout Base (AppShell) | Gerado pelo Stitch (automatico) |
+| 2.1 | Dashboard Admin | Gerado pelo Stitch (automatico) |
+| 2.2 | Catalogo — Listagem | Gerado pelo Stitch (automatico — "Inventario de Joias") |
+| 2.3 | Cadastro de Produto (Etapa 1: Basico) | Gerado |
+| 2.4 | Cadastro de Produto (Etapa 2: Material) | Gerado |
+| 2.5 | Cadastro de Produto (Etapa 3: Pedras) | Gerado |
+| 2.6 | Cadastro de Produto (Etapa 4: Preco) | Gerado |
+| 2.7 | Cadastro de Produto (Etapa 5: Imagens) | Gerado |
+| 2.8 | Estoque — Visao Geral | Gerado pelo Stitch (automatico — "Inventario de Joias") |
+| 3.1 | PDV — Ponto de Venda | Gerado |
+| 3.2 | PDV — Modal de Pagamento | Gerado |
+| 3.3 | Vendas — Historico | Gerado pelo Stitch (automatico — "Relatorios de Vendas") |
+| 3.4 | Clientes — Listagem | Gerado pelo Stitch (automatico — "Gestao de Clientes") |
+| 4.1 | Consignacao — Listagem | Gerado |
+| 4.2 | Consignacao — Detalhes do Kit | Gerado |
+| 4.3 | Consignacao — Novo Kit | Gerado |
+| 4.4 | Representantes — Listagem | Pulado (similar a listagens ja geradas) |
+| 4.5 | Representante — Dashboard Pessoal | Gerado |
+| 4.6 | Representante — Pecas em Posse | Pendente |
+
+**Resumo: 16 gerados | 3 pulados | 1 pendente**
+
+---
+
 ## Design System Global
 
 **Cole este prompt primeiro para estabelecer a identidade visual. Use como base para todas as telas:**

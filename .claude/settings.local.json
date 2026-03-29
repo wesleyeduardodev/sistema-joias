@@ -41,7 +41,8 @@
       "Bash(node -e \"const z = require\\(''zod''\\); console.log\\(typeof z.coerce\\); console.log\\(Object.keys\\(z.coerce\\).join\\('', ''\\)\\); const n = z.coerce.number\\(\\).min\\(1\\); console.log\\(n.parse\\(''5''\\)\\);\")",
       "Bash(mvn spring-boot:run)",
       "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJub21lIjoiQWRtaW5pc3RyYWRvciIsInN1YiI6ImFkbWluQGpvaWFzLmNvbSIsImlhdCI6MTc3NDcwOTMxOCwiZXhwIjoxNzc0NzEwMjE4fQ.w4fv76FGQuXpltVw8cYCZrLH64RCIfBozgbZV_WPyxE\")",
-      "Bash(__NEW_LINE_a58e63379294c7a7__ curl -s -X POST http://localhost:8080/api/v1/produtos -H \"Content-Type: application/json\" -H \"Authorization: Bearer $TOKEN\" -d '{:*)"
+      "Bash(__NEW_LINE_a58e63379294c7a7__ curl -s -X POST http://localhost:8080/api/v1/produtos -H \"Content-Type: application/json\" -H \"Authorization: Bearer $TOKEN\" -d '{:*)",
+      "Bash(npx playwright:*)"
     ]
   }
 }
